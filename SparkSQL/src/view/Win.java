@@ -11,9 +11,10 @@ public class Win {
 		name = winName;
 	}
 	public void show() {
-		if(stage == null)
+		if(stage == null) {
 			stage = new Stage();
-	    stage.setScene(scene);
+			stage.setScene(scene);			
+		}
 	    stage.show();
 	}
 	public void close() {

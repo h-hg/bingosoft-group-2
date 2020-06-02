@@ -1,5 +1,6 @@
 package controller;
 
-public class Controller {
-
+public abstract class Controller {
+	public abstract void show();
+	public abstract void close();
 }

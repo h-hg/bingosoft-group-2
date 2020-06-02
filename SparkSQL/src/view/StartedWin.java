@@ -120,15 +120,4 @@ public class StartedWin extends Win {
 		initStatusBar();
 		scene = new Scene(root);
 	}
-	public void show() {
-		if(stage == null)
-			stage = new Stage();
-	    stage.setScene(scene);
-	    stage.show();
-	}
-	public void close() {
-		if(stage == null)
-			return;
-		stage.close();
-	}
 }
