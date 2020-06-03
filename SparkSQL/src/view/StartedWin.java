@@ -32,23 +32,24 @@ public class StartedWin extends Win {
 	public MenuItem aboutMenuItem = null;
 	
 	//nav part
-	TreeView treeView = null;
+	public TreeView<String> treeView = null;
+	public TreeItem<String> treeRoot = null;
 	
 	//main part
-	VBox mainPane = null;
+	public VBox mainPane = null;
 	//main part - control bar
-	FlowPane controlBar = null;
-	ChoiceBox conChoiceBox = null;
-	ChoiceBox dbChoiceBox = null;
-	Button runBtn = null;
+	public FlowPane controlBar = null;
+	public ChoiceBox<String> conChoiceBox = null;
+	public ChoiceBox<String> dbChoiceBox = null;
+	public Button runBtn = null;
 	//main part - sql input part
-	TextArea sqlTextInput = null;
+	public TextArea sqlTextInput = null;
 	//main part - sql result part
-	TabPane sqlResTabPane = null;
-	Tab sqlInfoTab = null;
-	TextArea sqlInfoOutput = null;
+	public TabPane sqlResTabPane = null;
+	public Tab sqlInfoTab = null;
+	public TextArea sqlInfoOutput = null;
 	
-	Label statusBar = null;
+	public Label statusBar = null;
 	public void initRoot() {
 		root = new BorderPane();
 	}
@@ -72,16 +73,17 @@ public class StartedWin extends Win {
 	}
 	public void initNavPart() {
 		treeView = new TreeView<>();
+		treeView.setShowRoot(false);
 		root.setLeft(treeView);
 	    //for test
-		TreeItem treeItem = new TreeItem<>("root");
-	    treeItem.setExpanded(true);
-
+		treeRoot = new TreeItem<String>("root");
+	    treeRoot.setExpanded(true);
+	   
 	    for(int i = 0;i < 5;i++){
-	        TreeItem item = new TreeItem<>("node" + i);
-	        treeItem.getChildren().add(item);
+	        TreeItem<String> item = new TreeItem<String>("node" + i);
+	        treeRoot.getChildren().add(item);
 	    }
-	    treeView.setRoot(treeItem);
+	    treeView.setRoot(treeRoot);
 	    
 	    
 	}
@@ -110,7 +112,14 @@ public class StartedWin extends Win {
 		statusBar = new Label("status bar");
 		root.setBottom(statusBar);
 	}
-	
+	public void show() {
+		if(stage == null) {
+			stage = new Stage();
+			stage.setScene(scene);
+			stage.setTitle("Group 2");
+		}
+	    stage.show();
+	}
 	public StartedWin() {
 		super("StartedWin");
 		initRoot();

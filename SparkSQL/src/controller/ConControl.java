@@ -1,5 +1,6 @@
 package controller;
 
+
 import model.SparkSQLConConfig;
 import view.ConWin;
 
@@ -9,7 +10,7 @@ public class ConControl extends Controller {
 		view.cancelBtn.setOnAction(actionEvent -> view.close());
 		view.conBtn.setOnAction(actionEvent -> {
 			StartedControl startedControl = (StartedControl)Manager.name2Controller.get("StartedWin");
-			startedControl.addNewCon(new SparkSQLConConfig(view.urlInput.getText(), view.portInput.getText(), view.userInput.getText(), view.pwInput.getText()));
+			startedControl.addNewCon(new SparkSQLConConfig(view.conNameInput.getText(), view.urlInput.getText(), view.portInput.getText(), view.userInput.getText(), view.pwInput.getText()));
 			close();
 		});
 	}
