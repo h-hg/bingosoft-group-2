@@ -22,7 +22,7 @@ public class Main extends Application {
 	    
 	    //test code
 	    startedControl.addSQLConInfo(GenTestData.genSQLConInfo());
-	    
+	    startedControl.addSQLResult(GenTestData.genSQLResult());
 	}
 	public static void main(String[] args) {
 		launch(args);
