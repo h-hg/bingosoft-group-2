@@ -1,12 +1,14 @@
 package controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javafx.application.Platform;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.cell.MapValueFactory;
 import model.DatabaseInfo;
@@ -20,7 +22,8 @@ import view.StartedWin;
 
 public class StartedControl extends Controller {
 	private StartedWin view = null;
-
+	private Map<String, SQLConInfo> conName2SQLConInfo = new HashMap<>();
+	private String currentConName = null; //Suppose there is only one active sql-link.
 	public StartedControl(StartedWin mainWin) {
 		view = mainWin;
 		initMenu();
@@ -57,7 +60,7 @@ public class StartedControl extends Controller {
 			TreeItem<String> treeItem = newValue;
 			int level = view.treeView.getTreeItemLevel(treeItem);
 			String conName = null, dbName = null;
-			if(level == 1) {
+			if(level == 1) { //coName
 				conName = treeItem.getValue();
 			} else if(level == 2) { //coName
 				dbName = treeItem.getValue();
@@ -66,11 +69,32 @@ public class StartedControl extends Controller {
 				dbName = treeItem.getParent().getValue();
 				conName = treeItem.getParent().getParent().getValue();
 			}
+			if(conName == null || dbName == null)
+				return;
+			if(currentConName == conName) {
+				
+			} else {
+				
+			}
 			System.out.format("connect name: %s, database name: %s\n", conName, dbName);
 		});
 	}
 
 	public void addNewCon(SQLConConfig config) {
+		if(conName2SQLConInfo.get(config.name) != null) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error");
+			//alert.setHeaderText("Look, an Error Dialog");
+			alert.setContentText("Ooops, there was an connection named " + config.name + "!");
+			alert.showAndWait();
+			return;
+		}
+		//The omitted codes are roughly as follows
+		currentConName = config.name;
+		//SQLConInfo info = new SQLConInfo();
+		//do something with info
+		//conName2SQLConInfo.put(currentConName, info);
+		//addSQLConInfo(info);
 		System.out.println(config.url + " " + config.port + " " + config.user + " " + config.password);
 	}
 
@@ -90,7 +114,7 @@ public class StartedControl extends Controller {
 
 	public Tab createSQLResultTableTab(SQLResultTable table) {
 		TableView<Map<String, String>> tableView = new TableView<>();
-		// add column
+		// add column, see https://docs.oracle.com/javafx/2/ui_controls/table-view.htm
 		for (String columnName : table.columns) {
 			TableColumn<Map<String, String>, String> column = new TableColumn<>(columnName);
 			column.setCellValueFactory(new MapValueFactory(columnName));
