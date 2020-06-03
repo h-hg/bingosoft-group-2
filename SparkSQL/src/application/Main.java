@@ -16,13 +16,13 @@ public class Main extends Application {
 		
 		//Manager.name2Win.put(startedWin.name, startedWin);
 		Manager.name2Controller.put(startedWin.name, startedControl);
-		
 	    primaryStage.setScene(startedWin.scene);
 	    primaryStage.setTitle("Group 2");
 	    primaryStage.show();
 	    
 	    //test code
 	    startedControl.addSQLConInfo(GenTestData.genSQLConInfo());
+	    
 	}
 	public static void main(String[] args) {
 		launch(args);
