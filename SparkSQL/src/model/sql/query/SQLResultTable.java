@@ -1,22 +1,21 @@
 package model.sql.query;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
-
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class SQLResultTable {
 	public String name = null;
 	public ArrayList<String> columns = null;
-	//matrix
-	public ArrayList<ArrayList<String>> matrix = null;
 	public ObservableList<Map<String, String>> content = null;
-	
-	//This is a exmaple for store matrix in vector<map>
-	//how store the matrix in map<column key, value>
+	public SQLResultTable() {}
+	public SQLResultTable(String name) {
+		this.name = name;
+	}
+	//This is a example for how to convert the matrix(table) to map<column key, value>
 	//a map stands for a row in the matrix
+	/*
+	ArrayList<ArrayList<String>> matrix = null;
 	public void test() {
 	    int m = matrix.size(), n = matrix.get(0).size();
 	    content = FXCollections.observableArrayList();
@@ -28,4 +27,5 @@ public class SQLResultTable {
 	      content.add(dataRow);
 	    }
 	}
+	*/
 }
