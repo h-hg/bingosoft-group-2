@@ -6,25 +6,15 @@ import java.util.Map;
 import java.util.Random;
 
 import javafx.collections.FXCollections;
-import model.DatabaseTableInfo;
-import model.SQLResult;
-import model.SQLResultTable;
 import model.sql.SQLType;
-import model.sql.connect.DatabaseInfo;
+import model.sql.connect.DatabaseOutline;
 import model.sql.connect.SQLConConfig;
-import model.sql.connect.SQLConInfo;
-import model.sql.connect.SparkSQLConConfig;
-import model.sql.services.SparkSQLService;
+import model.sql.connect.SQLConOutline;
+import model.sql.connect.TableOutline;
+import model.sql.query.SQLResult;
+import model.sql.query.SQLResultTable;
 
 public class GenTestData {
-	public static String sqldriverClassName="org.apache.mysql.jdbc.mysqlDriver";
-	public static String conname="bigdata";
-	public static String sqlurl="bigdata31.depts.bingosoft.net";
-	public static String sqlport="22231";	
-	public static String sqlusername="user08";
-	public static String sqlpassword="pass@bingo8";
-	public static String sqldb="user08_db";
-	  
 	public static Random random = new Random();
 	static public int genInt(int min, int max) {
 		return min + random.nextInt(max - min + 1);
@@ -42,29 +32,26 @@ public class GenTestData {
 		SQLConConfig ret = new SQLConConfig(SQLType.SPARK, genString(5), genString(5), genString(5), genString(5), genString(5));
 		return ret;
 	}
-	static public DatabaseTableInfo genDatabaseTableInfo(String table) {
-		DatabaseTableInfo ret = new DatabaseTableInfo(table);
+	static public TableOutline genTableOutline() {
+		TableOutline ret = new TableOutline(genString(5));
 		return ret;
 	}
-	static public DatabaseInfo genDatabaseInfo(SparkSQLService serv,String db) {
-		DatabaseInfo ret = new DatabaseInfo();
-		ret.name = db;
-		ArrayList <String> tableList = serv.getTableNames(db);
-		ArrayList<DatabaseTableInfo> tbs = new ArrayList<DatabaseTableInfo>();
-		for(int i = 0; i < tableList.size(); ++i) {
-			tbs.add(genDatabaseTableInfo(tableList.get(i)));
+	static public DatabaseOutline genDatabaseOutline() {
+		DatabaseOutline ret = new DatabaseOutline();
+		ret.name = genString(5);
+		ArrayList<TableOutline> tbs = new ArrayList<TableOutline>();
+		for(int i = 0, n = genInt(1, 5); i < n; ++i) {
+			tbs.add(genTableOutline());
 		}
 		ret.tables = tbs;
 		return ret;
 	}
-	static public SQLConInfo genSQLConInfo(SparkSQLService serv) {
-		SQLConInfo ret = new SQLConInfo();
-		ret.conConfig = new SparkSQLConConfig(conname, sqlurl, sqlport, sqlusername, sqlpassword, sqldb);
-		
-		ArrayList <String> dbList=serv.getDbNames();
-		ArrayList<DatabaseInfo> dbs = new ArrayList<DatabaseInfo>();
-		for(int i = 0; i < dbList.size(); ++i) {
-			dbs.add(genDatabaseInfo(serv,dbList.get(i)));
+	static public SQLConOutline genSQLConInfo() {
+		SQLConOutline ret = new SQLConOutline();
+		ret.conConfig = genSQLConConfig();
+		ArrayList<DatabaseOutline> dbs = new ArrayList<DatabaseOutline>();
+		for(int i = 0, n = genInt(1, 3); i < n; ++i) {
+			dbs.add(genDatabaseOutline());
 		}
 		ret.dbs = dbs;
 		return ret;
@@ -104,5 +91,3 @@ public class GenTestData {
 		return ret;
 	}
 }
-
-

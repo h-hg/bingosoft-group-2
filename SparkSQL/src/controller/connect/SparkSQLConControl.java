@@ -16,8 +16,8 @@ public class SparkSQLConControl extends SQLConControl{
 		view.cancelBtn.setOnAction(actionEvent -> view.close());
 		view.conBtn.setOnAction(actionEvent -> {
 			StartedControl startedControl = (StartedControl)Manager.name2Controller.get("StartedWin");
-			startedControl.addNewCon(new SparkSQLConConfig(view.conNameInput.getText(), view.urlInput.getText(), view.portInput.getText(), view.userInput.getText(), view.pwInput.getText(), view.initialDbNameInput.getText()));
 			close();
+			startedControl.addNewCon(new SparkSQLConConfig(view.conNameInput.getText(), view.urlInput.getText(), view.portInput.getText(), view.userInput.getText(), view.pwInput.getText(), view.initialDbNameInput.getText()));
 		});
 	}
 }

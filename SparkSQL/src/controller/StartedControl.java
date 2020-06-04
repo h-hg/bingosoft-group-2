@@ -13,21 +13,24 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.cell.MapValueFactory;
-import model.DatabaseTableInfo;
-import model.SQLResult;
-import model.SQLResultTable;
-import model.sql.connect.DatabaseInfo;
+import model.sql.connect.DatabaseOutline;
+import model.sql.connect.TableOutline;
 import model.sql.connect.SQLConConfig;
-import model.sql.connect.SQLConInfo;
+import model.sql.connect.SQLConOutline;
 import model.sql.connect.SparkSQLConConfig;
+import model.sql.query.SQLResult;
+import model.sql.query.SQLResultTable;
+import model.sql.services.SQLService;
+import model.sql.services.SparkSQLService;
 import view.StartedWin;
 import view.connect.SQLConWin;
 import view.connect.SparkSQLConWin;
 
 public class StartedControl extends Controller {
 	private StartedWin view = null;
-	private Map<String, SQLConInfo> conName2SQLConInfo = new HashMap<>();
+	private Map<String, SQLConConfig> conName2SQLConInfo = new HashMap<>();
 	private String currentConName = null; //Suppose there is only one active sql-link.
+	private SQLService conService = null;
 	
 	public StartedControl(StartedWin mainWin) {
 		view = mainWin;
@@ -80,7 +83,7 @@ public class StartedControl extends Controller {
 			} else {
 				
 			}
-			System.out.format("connect name: %s, database name: %s\n", conName, dbName);
+			view.statusBar.setText(String.format("connect name: %s, database name: %s", conName, dbName));
 		});
 	}
 
@@ -93,26 +96,25 @@ public class StartedControl extends Controller {
 			alert.showAndWait();
 			return;
 		}
-		currentConName = config.name;
-		if(config instanceof SparkSQLConConfig) {
-			addSparkSQLCon((SparkSQLConConfig)config);
+		//Suppose there is only one active sql-link.
+		if(conService != null) {
+			conService.close();
 		}
+		if(config instanceof SparkSQLConConfig) { //in order for other connect
+			conService = new SparkSQLService((SparkSQLConConfig)config);
+		}
+		conService.getService();
+		addSQLConInfo(conService.getSQLConInfo());
+		currentConName = config.name;
+		conName2SQLConInfo.put(currentConName, config);
 	}
-	public void addSparkSQLCon(SparkSQLConConfig config) {		
-		//The omitted codes are roughly as follows
-		//SQLConInfo info = new SQLConInfo();
-		//do something with info
-		//conName2SQLConInfo.put(currentConName, info);
-		//addSQLConInfo(info);
-		System.out.println(config.url + " " + config.port + " " + config.user + " " + config.password);
-	}
-	public void addSQLConInfo(SQLConInfo info) {
+	public void addSQLConInfo(SQLConOutline info) {
 		// connection name
 		TreeItem<String> root = new TreeItem<String>(info.conConfig.name);
-		for (DatabaseInfo dbInfo : info.dbs) {
+		for (DatabaseOutline dbInfo : info.dbs) {
 			// database name
 			TreeItem<String> dbRoot = new TreeItem<String>(dbInfo.name);
-			for (DatabaseTableInfo tbInfo : dbInfo.tables) {
+			for (TableOutline tbInfo : dbInfo.tables) {
 				dbRoot.getChildren().add(new TreeItem<String>(tbInfo.name));
 			}
 			root.getChildren().add(dbRoot);
@@ -146,17 +148,14 @@ public class StartedControl extends Controller {
 		}
 	}
 
-	public void test() {
-		view.treeRoot.isLeaf();
-		// view.treeRoot.getParent() != null;
-		System.out.println(view.treeView.getTreeItemLevel(view.treeRoot));
-	}
-
 	public void show() {
 		view.show();
 	}
 
 	public void close() {
+		if(conService != null) {
+			conService.close();
+		}
 		view.close();
 	}
 }

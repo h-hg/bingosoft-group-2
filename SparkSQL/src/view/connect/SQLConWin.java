@@ -62,7 +62,7 @@ public abstract class SQLConWin extends Win {
 		inputBar.add(pwInput, 1, 4);
 		
 		controlBar = new HBox(10);
-		controlBar.setPadding(new Insets(25, 25, 25, 25));
+		controlBar.setPadding(new Insets(0, 25, 0, 25));
 
 		root.getChildren().add(controlBar);
 		conBtn = new Button("Connect");
