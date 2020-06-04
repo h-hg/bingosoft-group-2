@@ -7,7 +7,7 @@ public abstract class Win {
 	public Stage stage = null;
 	public Scene scene = null;
 	public String name = null;
-	Win(String winName) {
+	public Win(String winName) {
 		name = winName;
 	}
 	public abstract void show();

@@ -1,5 +1,6 @@
-package model;
+package model.sql.connect;
 
+import model.sql.SQLType;
 
 public class SQLConConfig {
 	public SQLType type = null;

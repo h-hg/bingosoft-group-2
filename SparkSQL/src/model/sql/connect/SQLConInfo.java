@@ -1,4 +1,4 @@
-package model;
+package model.sql.connect;
 
 import java.util.ArrayList;
 

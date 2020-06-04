@@ -6,17 +6,25 @@ import java.util.Map;
 import java.util.Random;
 
 import javafx.collections.FXCollections;
-import model.DatabaseInfo;
 import model.DatabaseTableInfo;
-import model.SQLConConfig;
-import model.SQLConInfo;
 import model.SQLResult;
 import model.SQLResultTable;
-import model.SQLType;
-import model.SparkSQLConConfig;
-import model.SparkSQLService;
+import model.sql.SQLType;
+import model.sql.connect.DatabaseInfo;
+import model.sql.connect.SQLConConfig;
+import model.sql.connect.SQLConInfo;
+import model.sql.connect.SparkSQLConConfig;
+import model.sql.services.SparkSQLService;
 
 public class GenTestData {
+	public static String sqldriverClassName="org.apache.mysql.jdbc.mysqlDriver";
+	public static String conname="bigdata";
+	public static String sqlurl="bigdata31.depts.bingosoft.net";
+	public static String sqlport="22231";	
+	public static String sqlusername="user08";
+	public static String sqlpassword="pass@bingo8";
+	public static String sqldb="user08_db";
+	  
 	public static Random random = new Random();
 	static public int genInt(int min, int max) {
 		return min + random.nextInt(max - min + 1);
@@ -41,7 +49,7 @@ public class GenTestData {
 	static public DatabaseInfo genDatabaseInfo(SparkSQLService serv,String db) {
 		DatabaseInfo ret = new DatabaseInfo();
 		ret.name = db;
-		ArrayList <String> tableList=serv.getTable(db);
+		ArrayList <String> tableList = serv.getTableNames(db);
 		ArrayList<DatabaseTableInfo> tbs = new ArrayList<DatabaseTableInfo>();
 		for(int i = 0; i < tableList.size(); ++i) {
 			tbs.add(genDatabaseTableInfo(tableList.get(i)));
@@ -51,9 +59,9 @@ public class GenTestData {
 	}
 	static public SQLConInfo genSQLConInfo(SparkSQLService serv) {
 		SQLConInfo ret = new SQLConInfo();
-		ret.conConfig = new SparkSQLConConfig(serv.conname,serv.url,serv.post,serv.username,serv.password);
+		ret.conConfig = new SparkSQLConConfig(conname, sqlurl, sqlport, sqlusername, sqlpassword, sqldb);
 		
-		ArrayList <String> dbList=serv.getDB();
+		ArrayList <String> dbList=serv.getDbNames();
 		ArrayList<DatabaseInfo> dbs = new ArrayList<DatabaseInfo>();
 		for(int i = 0; i < dbList.size(); ++i) {
 			dbs.add(genDatabaseInfo(serv,dbList.get(i)));
@@ -96,4 +104,5 @@ public class GenTestData {
 		return ret;
 	}
 }
+
 

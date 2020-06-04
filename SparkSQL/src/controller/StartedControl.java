@@ -3,6 +3,8 @@ package controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import controller.connect.SQLConControl;
+import controller.connect.SparkSQLConControl;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -11,19 +13,22 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.cell.MapValueFactory;
-import model.DatabaseInfo;
 import model.DatabaseTableInfo;
-import model.SQLConConfig;
-import model.SQLConInfo;
 import model.SQLResult;
 import model.SQLResultTable;
-import view.ConWin;
+import model.sql.connect.DatabaseInfo;
+import model.sql.connect.SQLConConfig;
+import model.sql.connect.SQLConInfo;
+import model.sql.connect.SparkSQLConConfig;
 import view.StartedWin;
+import view.connect.SQLConWin;
+import view.connect.SparkSQLConWin;
 
 public class StartedControl extends Controller {
 	private StartedWin view = null;
 	private Map<String, SQLConInfo> conName2SQLConInfo = new HashMap<>();
 	private String currentConName = null; //Suppose there is only one active sql-link.
+	
 	public StartedControl(StartedWin mainWin) {
 		view = mainWin;
 		initMenu();
@@ -32,13 +37,12 @@ public class StartedControl extends Controller {
 	}
 
 	private void initMenu() {
-		view.newConMenuItem.setOnAction(actionEvent -> {
-			ConWin conWin = null;
-			ConControl conControl = (ConControl) Manager.name2Controller.get("ConWin");
+		view.newSparkSQLConMenuItem.setOnAction(actionEvent -> {
+			SQLConWin conWin = null;
+			SQLConControl conControl = (SQLConControl) Manager.name2Controller.get("SparkConWin");
 			if (conWin == null) {
-				conWin = new ConWin();
-				conControl = new ConControl(conWin);
-				// Manager.name2Win.put(conWin.name, conWin);
+				conWin = new SparkSQLConWin();
+				conControl = new SparkSQLConControl((SparkSQLConWin)conWin);
 				Manager.name2Controller.put(conWin.name, conControl);
 			}
 			conControl.show();
@@ -89,15 +93,19 @@ public class StartedControl extends Controller {
 			alert.showAndWait();
 			return;
 		}
-		//The omitted codes are roughly as follows
 		currentConName = config.name;
+		if(config instanceof SparkSQLConConfig) {
+			addSparkSQLCon((SparkSQLConConfig)config);
+		}
+	}
+	public void addSparkSQLCon(SparkSQLConConfig config) {		
+		//The omitted codes are roughly as follows
 		//SQLConInfo info = new SQLConInfo();
 		//do something with info
 		//conName2SQLConInfo.put(currentConName, info);
 		//addSQLConInfo(info);
 		System.out.println(config.url + " " + config.port + " " + config.user + " " + config.password);
 	}
-
 	public void addSQLConInfo(SQLConInfo info) {
 		// connection name
 		TreeItem<String> root = new TreeItem<String>(info.conConfig.name);

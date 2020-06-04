@@ -25,7 +25,8 @@ public class StartedWin extends Win {
 	//menu bar
 	public MenuBar menuBar = null;
 	public Menu fileMenu = null;
-	public MenuItem newConMenuItem = null;
+	public Menu newSQLConMenu = null;
+	public MenuItem newSparkSQLConMenuItem = null;
 	public MenuItem exitMenuItem = null;
 	public Menu aboutMenu = null;
 	public MenuItem helpMenuItem = null;
@@ -58,10 +59,12 @@ public class StartedWin extends Win {
 	    //menuBar.prefWidthProperty().bind(primaryStage.widthProperty());
 
 	    fileMenu = new Menu("File");
-	    newConMenuItem = new MenuItem("New");
+	    newSQLConMenu = new Menu("New Connection");
+	    newSparkSQLConMenuItem = new MenuItem("SparkSQL");
+	    newSQLConMenu.getItems().add(newSparkSQLConMenuItem);
 	    exitMenuItem = new MenuItem("Exit");
 	    
-	    fileMenu.getItems().addAll(newConMenuItem, new SeparatorMenuItem(), exitMenuItem);
+	    fileMenu.getItems().addAll(newSQLConMenu, new SeparatorMenuItem(), exitMenuItem);
 
 	    aboutMenu = new Menu("About");
 	    helpMenuItem = new MenuItem("Help");
@@ -79,13 +82,7 @@ public class StartedWin extends Win {
 		treeRoot = new TreeItem<String>("root");
 	    treeRoot.setExpanded(true);
 	   
-	    for(int i = 0;i < 5;i++){
-	        TreeItem<String> item = new TreeItem<String>("node" + i);
-	        treeRoot.getChildren().add(item);
-	    }
-	    treeView.setRoot(treeRoot);
-	    
-	    
+	    treeView.setRoot(treeRoot); 
 	}
 	public void initMainPart() {
 		mainPane = new VBox();
