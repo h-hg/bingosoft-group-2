@@ -13,6 +13,8 @@ import model.SQLConInfo;
 import model.SQLResult;
 import model.SQLResultTable;
 import model.SQLType;
+import model.SparkSQLConConfig;
+import model.SparkSQLService;
 
 public class GenTestData {
 	public static Random random = new Random();
@@ -32,26 +34,29 @@ public class GenTestData {
 		SQLConConfig ret = new SQLConConfig(SQLType.SPARK, genString(5), genString(5), genString(5), genString(5), genString(5));
 		return ret;
 	}
-	static public DatabaseTableInfo genDatabaseTableInfo() {
-		DatabaseTableInfo ret = new DatabaseTableInfo(genString(5));
+	static public DatabaseTableInfo genDatabaseTableInfo(String table) {
+		DatabaseTableInfo ret = new DatabaseTableInfo(table);
 		return ret;
 	}
-	static public DatabaseInfo genDatabaseInfo() {
+	static public DatabaseInfo genDatabaseInfo(SparkSQLService serv,String db) {
 		DatabaseInfo ret = new DatabaseInfo();
-		ret.name = genString(5);
+		ret.name = db;
+		ArrayList <String> tableList=serv.getTable(db);
 		ArrayList<DatabaseTableInfo> tbs = new ArrayList<DatabaseTableInfo>();
-		for(int i = 0, n = genInt(1, 5); i < n; ++i) {
-			tbs.add(genDatabaseTableInfo());
+		for(int i = 0; i < tableList.size(); ++i) {
+			tbs.add(genDatabaseTableInfo(tableList.get(i)));
 		}
 		ret.tables = tbs;
 		return ret;
 	}
-	static public SQLConInfo genSQLConInfo() {
+	static public SQLConInfo genSQLConInfo(SparkSQLService serv) {
 		SQLConInfo ret = new SQLConInfo();
-		ret.conConfig = genSQLConConfig();
+		ret.conConfig = new SparkSQLConConfig(serv.conname,serv.url,serv.post,serv.username,serv.password);
+		
+		ArrayList <String> dbList=serv.getDB();
 		ArrayList<DatabaseInfo> dbs = new ArrayList<DatabaseInfo>();
-		for(int i = 0, n = genInt(1, 3); i < n; ++i) {
-			dbs.add(genDatabaseInfo());
+		for(int i = 0; i < dbList.size(); ++i) {
+			dbs.add(genDatabaseInfo(serv,dbList.get(i)));
 		}
 		ret.dbs = dbs;
 		return ret;
