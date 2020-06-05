@@ -150,7 +150,8 @@ public class SparkSQLService extends SQLService {
 	}
 
 	/*
-	 * 0: the operation that this code doesn's implement 1: select or show operation
+	 * 0: the operation that this code doesn's implement
+	 * 1: select or show operation
 	 * 2: insert, update, alter or delete operation 3: create or drop operation
 	 */
 	private int getOperationType(String query) {
