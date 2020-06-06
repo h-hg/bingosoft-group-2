@@ -1,6 +1,8 @@
-package model.sql.connect;
+package model.sql.query;
 
 import java.util.ArrayList;
+
+import model.sql.connect.SQLConConfig;
 
 public class SQLConOutline {
 	public SQLConConfig conConfig = null;

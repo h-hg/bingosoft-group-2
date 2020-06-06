@@ -1,4 +1,4 @@
-package model.sql.connect;
+package model.sql.query;
 
 public class TableOutline {
 	public String name = null;

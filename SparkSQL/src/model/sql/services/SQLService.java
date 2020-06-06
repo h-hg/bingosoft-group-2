@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.collections.FXCollections;
-import model.sql.connect.SQLConOutline;
+import model.sql.query.SQLConOutline;
 import model.sql.query.SQLResult;
 import model.sql.query.SQLResultTable;
 

@@ -2,6 +2,7 @@ package controller;
 
 import java.util.HashMap;
 import java.util.Map;
+import controller.connect.MySQLConControl;
 import controller.connect.SQLConControl;
 import controller.connect.SparkSQLConControl;
 import javafx.application.Platform;
@@ -12,16 +13,20 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.cell.MapValueFactory;
-import model.sql.connect.DatabaseOutline;
-import model.sql.connect.TableOutline;
+import model.sql.SQLType;
+import model.sql.connect.MySQLConConfig;
 import model.sql.connect.SQLConConfig;
-import model.sql.connect.SQLConOutline;
 import model.sql.connect.SparkSQLConConfig;
+import model.sql.query.DatabaseOutline;
+import model.sql.query.SQLConOutline;
 import model.sql.query.SQLResult;
 import model.sql.query.SQLResultTable;
+import model.sql.query.TableOutline;
+import model.sql.services.MySQLService;
 import model.sql.services.SQLService;
 import model.sql.services.SparkSQLService;
 import view.StartedWin;
+import view.connect.MySQLConWin;
 import view.connect.SQLConWin;
 import view.connect.SparkSQLConWin;
 
@@ -59,17 +64,32 @@ public class StartedControl extends Controller {
 			}		
 		}
 	}
-
+	protected void lanuchConWin(String winName, SQLType type) {
+		SQLConWin conWin = null;
+		SQLConControl conControl = (SQLConControl) Manager.name2Controller.get(winName);
+		if (conWin == null) {
+			switch (type) {
+			case MYSQL:
+				conWin = new MySQLConWin();
+				conControl = new MySQLConControl((MySQLConWin) conWin); 
+				break;
+			case SPARK:
+				conWin = new SparkSQLConWin();
+				conControl = new SparkSQLConControl((SparkSQLConWin) conWin);				
+				break;
+			default:
+				break;
+			}
+			Manager.name2Controller.put(conWin.name, conControl);
+		}
+		conControl.show();
+	}
 	private void initMenu() {
 		view.newSparkSQLConMenuItem.setOnAction(actionEvent -> {
-			SQLConWin conWin = null;
-			SQLConControl conControl = (SQLConControl) Manager.name2Controller.get("SparkConWin");
-			if (conWin == null) {
-				conWin = new SparkSQLConWin();
-				conControl = new SparkSQLConControl((SparkSQLConWin) conWin);
-				Manager.name2Controller.put(conWin.name, conControl);
-			}
-			conControl.show();
+			lanuchConWin("SparkSQLConWin", SQLType.SPARK);
+		});
+		view.newMySQLConMenuItem.setOnAction(actionEvent -> {
+			lanuchConWin("MySQLConWin", SQLType.MYSQL);
 		});
 		view.exitMenuItem.setOnAction(actionEvent -> Platform.exit());
 	}
@@ -146,10 +166,14 @@ public class StartedControl extends Controller {
 	}
 
 	SQLService getSQLService(SQLConConfig config) {
-		if (config instanceof SparkSQLConConfig) { // in order for other connect
+		switch (config.type) {
+		case SPARK:
 			return new SparkSQLService((SparkSQLConConfig) config);
-		} // else if
-		return null;
+		case MYSQL:
+			return new MySQLService((MySQLConConfig)config);
+		default:
+			return null;
+		}
 	}
 
 	boolean changeCurrentCon(SQLConConfig config) {

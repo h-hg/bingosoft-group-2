@@ -28,6 +28,7 @@ public class StartedWin extends Win {
 	public Menu fileMenu = null;
 	public Menu newSQLConMenu = null;
 	public MenuItem newSparkSQLConMenuItem = null;
+	public MenuItem newMySQLConMenuItem = null;
 	public MenuItem exitMenuItem = null;
 	public Menu aboutMenu = null;
 	public MenuItem helpMenuItem = null;
@@ -64,8 +65,9 @@ public class StartedWin extends Win {
 
 	    fileMenu = new Menu("File");
 	    newSQLConMenu = new Menu("New Connection");
+	    newMySQLConMenuItem = new MenuItem("MySQL");
 	    newSparkSQLConMenuItem = new MenuItem("SparkSQL");
-	    newSQLConMenu.getItems().add(newSparkSQLConMenuItem);
+	    newSQLConMenu.getItems().addAll(newMySQLConMenuItem, newSparkSQLConMenuItem);
 	    exitMenuItem = new MenuItem("Exit");
 	    
 	    fileMenu.getItems().addAll(newSQLConMenu, new SeparatorMenuItem(), exitMenuItem);

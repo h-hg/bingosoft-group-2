@@ -7,12 +7,12 @@ import java.util.Random;
 
 import javafx.collections.FXCollections;
 import model.sql.SQLType;
-import model.sql.connect.DatabaseOutline;
 import model.sql.connect.SQLConConfig;
-import model.sql.connect.SQLConOutline;
-import model.sql.connect.TableOutline;
+import model.sql.query.DatabaseOutline;
+import model.sql.query.SQLConOutline;
 import model.sql.query.SQLResult;
 import model.sql.query.SQLResultTable;
+import model.sql.query.TableOutline;
 
 public class GenTestData {
 	public static Random random = new Random();

@@ -4,19 +4,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import model.sql.connect.SparkSQLConConfig;
+import model.sql.connect.MySQLConConfig;
 import model.sql.query.DatabaseOutline;
 import model.sql.query.SQLConOutline;
 import model.sql.query.TableOutline;
 
-public class SparkSQLService extends SQLService {
+public class MySQLService extends SQLService {
 
-	protected String driverClassName = "org.apache.hive.jdbc.HiveDriver";
-	protected String protocol = "jdbc:hive2://";
+	protected String driverClassName = "com.mysql.cj.jdbc.Driver";
+	protected String protocol = "jdbc:mysql://";
 	
-	protected SparkSQLConConfig config = null;
+	protected MySQLConConfig config = null;
 
-	public SparkSQLService(SparkSQLConConfig config) {
+	public MySQLService(MySQLConConfig config) {
 		this.config = config;
 	}
 	public boolean getService() {

@@ -2,15 +2,15 @@ package view.connect;
 
 import javafx.stage.Stage;
 
-public class SparkSQLConWin extends SQLConWinWithDbName {
-
-	public SparkSQLConWin() {
-		super("SparkSQLConWin");
+public class MySQLConWin extends SQLConWinWithDbName {
+	
+	public MySQLConWin() {
+		super("MySQLConWin");
 
 		// for test
-		String conname = "SparkSQL";
-		String sqlurl = "bigdata31.depts.bingosoft.net";
-		String sqlport = "22231";
+		String conname = "MySQL";
+		String sqlurl = "bigdata28.depts.bingosoft.net";
+		String sqlport = "23307";
 		String sqlusername = "user07";
 		String sqlpassword = "pass@bingo7";
 		String sqldb = "user07_db";
@@ -26,7 +26,7 @@ public class SparkSQLConWin extends SQLConWinWithDbName {
 		if (stage == null) {
 			stage = new Stage();
 			stage.setScene(scene);
-			stage.setTitle("SparkSQL Configuration");
+			stage.setTitle("MySQL Configuration");
 		}
 		stage.show();
 	}
