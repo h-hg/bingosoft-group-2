@@ -1,5 +1,6 @@
 package view;
 
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -41,8 +42,11 @@ public class StartedWin extends Win {
 	//main part - control bar
 	public FlowPane controlBar = null;
 	public ChoiceBox<String> conChoiceBox = null;
-	public ChoiceBox<String> dbChoiceBox = null;
+	//public ChoiceBox<String> dbChoiceBox = null;
 	public Button runBtn = null;
+	public Button refreshBtn = null;
+	public Button conBtn = null;//connect button
+	public Button rmBtn = null;//remove button
 	//main part - sql input part
 	public TextArea sqlTextInput = null;
 	//main part - sql result part
@@ -88,10 +92,16 @@ public class StartedWin extends Win {
 		mainPane = new VBox();
 		//control bar
 		controlBar = new FlowPane();
+		controlBar.setPadding(new Insets(10, 10, 10, 10));
+		controlBar.setVgap(15);
+		controlBar.setHgap(15);
 		conChoiceBox = new ChoiceBox<>();
-		dbChoiceBox = new ChoiceBox<>();
+		//dbChoiceBox = new ChoiceBox<>();
 		runBtn = new Button("run");
-		controlBar.getChildren().addAll(conChoiceBox, dbChoiceBox, runBtn);
+		refreshBtn = new Button("refresh");
+		conBtn = new Button("connect");
+		rmBtn = new Button("remove");
+		controlBar.getChildren().addAll(refreshBtn, conChoiceBox, conBtn, rmBtn, runBtn);
 		//sql input part
 		sqlTextInput = new TextArea();
 		//sql result part

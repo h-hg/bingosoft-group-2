@@ -5,7 +5,6 @@ import controller.Manager;
 import controller.StartedControl;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import test.GenTestData;
 import view.StartedWin;
 
 public class Main extends Application {
@@ -21,13 +20,6 @@ public class Main extends Application {
 	    primaryStage.setTitle("Group 2");
 	    primaryStage.show();
 	    
-	    //test code
-	    //SparkSQLConConfig config = new SparkSQLConConfig(conname,sqlurl,sqlpost,sqlusername,sqlpassword, sqldb);
-	    //SparkSQLService serv = new SparkSQLService(config);//至少需要连接一个数据库
-	    //serv.getService();
-	    //startedControl.addSQLConInfo(serv.getSQLConInfo());
-
-	    startedControl.addSQLResult(GenTestData.genSQLResult());
 	}
 	@Override
     public void stop() throws Exception {

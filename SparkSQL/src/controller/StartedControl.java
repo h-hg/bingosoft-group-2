@@ -2,7 +2,6 @@ package controller;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import controller.connect.SQLConControl;
 import controller.connect.SparkSQLConControl;
 import javafx.application.Platform;
@@ -39,6 +38,28 @@ public class StartedControl extends Controller {
 		initNavBar();
 	}
 
+	public void setStatusBarText(String text) {
+		view.statusBar.setText(text);
+	}
+
+	public void removeCon(String conName) {
+		if (conName == null || conName2SQLConInfo.get(conName) == null)
+			return;
+		conName2SQLConInfo.remove(conName);
+		if (currentConName.equals(conName)) {
+			currentConName = null;
+			conService.close();
+			conService = null;
+		}
+		view.conChoiceBox.getItems().remove(conName);
+		for(TreeItem<String> item : view.treeRoot.getChildren()) {
+			if(item.getValue().equals(conName)) {
+				view.treeRoot.getChildren().remove(item);
+				break;
+			}		
+		}
+	}
+
 	private void initMenu() {
 		view.newSparkSQLConMenuItem.setOnAction(actionEvent -> {
 			SQLConWin conWin = null;
@@ -55,11 +76,42 @@ public class StartedControl extends Controller {
 
 	private void initControlBar() {
 		view.runBtn.setOnAction(actionEvent -> {
-			if(conService == null) {
+			if (conService == null) {
 				return;
 			}
 			addSQLResult(conService.getResult(view.sqlTextInput.getText()));
-			//System.out.println(view.treeView.getSelectionModel().getSelectedItem().getValue());
+		});
+		view.conBtn.setOnAction(actionEvent -> {
+			if (view.conChoiceBox.getSelectionModel().getSelectedIndex() == -1) {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Connetion Error");
+				alert.setContentText("Ooops, Choose at least one connection!");
+				alert.showAndWait();
+				return;
+			}
+			String conName = view.conChoiceBox.getValue();
+			changeCurrentCon(conName2SQLConInfo.get(conName));
+		});
+		view.refreshBtn.setOnAction(actionEvent -> {
+			// clear
+			view.treeRoot.getChildren().clear();
+			// add
+			for (Map.Entry<String, SQLConConfig> item : conName2SQLConInfo.entrySet()) {
+				SQLService service = getSQLService(item.getValue());
+				service.getService();
+				addSQLConInfo(service.getSQLConInfo());
+				service.close();
+			}
+		});
+		view.rmBtn.setOnAction(actionEvent -> {
+			if(view.conChoiceBox.getSelectionModel().getSelectedIndex() == -1) {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Remove Error");
+				alert.setContentText("Ooops, Choose at least one connection!");
+				alert.showAndWait();
+				return;
+			}
+			removeCon(view.conChoiceBox.getValue());
 		});
 	}
 
@@ -85,43 +137,53 @@ public class StartedControl extends Controller {
 			if (conName == null || dbName == null)
 				return;
 			if (currentConName == conName) {
-				
+
 			} else {
 
 			}
-			view.statusBar.setText(String.format("connect name: %s, database name: %s", conName, dbName));
+			setStatusBarText(String.format("connect name: %s, database name: %s", conName, dbName));
 		});
 	}
 
-	private void changeCurrentCon(SQLConConfig config) {
+	SQLService getSQLService(SQLConConfig config) {
+		if (config instanceof SparkSQLConConfig) { // in order for other connect
+			return new SparkSQLService((SparkSQLConConfig) config);
+		} // else if
+		return null;
+	}
+
+	boolean changeCurrentCon(SQLConConfig config) {
 		// Suppose there is only one active sql-link.
-		//if(config.name.equals(currentConName))
-			//return;
+		if (config.name.equals(currentConName))
+			return true;
 		if (conService != null) {
 			conService.close();
 		}
-		if (config instanceof SparkSQLConConfig) { // in order for other connect
-			conService = new SparkSQLService((SparkSQLConConfig) config);
-		}//else if
-		conService.getService();
-		addSQLConInfo(conService.getSQLConInfo());
+		conService = getSQLService(config);
+		if (conService.getService() == false)
+			return false;
 		currentConName = config.name;
-		conName2SQLConInfo.put(currentConName, config);
+		return true;
 	}
 
 	public void addNewCon(SQLConConfig config) {
+		// judge whether there is a connection name config.name now.
 		if (conName2SQLConInfo.get(config.name) != null) {
 			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("Error");
-			// alert.setHeaderText("Look, an Error Dialog");
-			alert.setContentText("Ooops, there was an connection named " + config.name + "!");
+			alert.setTitle("New Connection Error");
+			alert.setContentText("Ooops, there was an connection named" + config.name + "!");
 			alert.showAndWait();
 			return;
 		}
-		changeCurrentCon(config);
+		if (changeCurrentCon(config) == false) {
+			return;
+		}
+		view.conChoiceBox.getItems().add(config.name);
+		conName2SQLConInfo.put(currentConName, config);
+		addSQLConInfo(conService.getSQLConInfo());
 	}
 
-	public void addSQLConInfo(SQLConOutline info) {
+	void addSQLConInfo(SQLConOutline info) {
 		// connection name
 		TreeItem<String> root = new TreeItem<String>(info.conConfig.name);
 		for (DatabaseOutline dbInfo : info.dbs) {
@@ -135,7 +197,7 @@ public class StartedControl extends Controller {
 		view.treeRoot.getChildren().add(root);
 	}
 
-	public Tab createSQLResultTableTab(SQLResultTable table) {
+	protected Tab createSQLResultTableTab(SQLResultTable table) {
 		TableView<Map<String, String>> tableView = new TableView<>();
 		// add column, see https://docs.oracle.com/javafx/2/ui_controls/table-view.htm
 		for (String columnName : table.columns) {
@@ -150,7 +212,7 @@ public class StartedControl extends Controller {
 		return tab;
 	}
 
-	public void addSQLResult(SQLResult res) {
+	void addSQLResult(SQLResult res) {
 		// set sql info
 		view.sqlInfoOutput.setText(res.info);
 		// set tabs
