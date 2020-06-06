@@ -9,7 +9,7 @@ import model.sql.connect.SQLConConfig;
 import view.connect.SQLConWin;
 
 public abstract class SQLConControl extends Controller {
-	private SQLConWin view = null;
+	private SQLConWin view = null;//It's important to set private, because it's inheritance has view, too.
 	
 	protected abstract SQLConConfig generateSQLConConfig();	
 	public void initControlBar() {

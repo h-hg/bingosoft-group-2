@@ -1,6 +1,7 @@
 package model.sql.services;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -10,16 +11,60 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.collections.FXCollections;
+import model.sql.connect.SQLConConfig;
+import model.sql.query.DatabaseOutline;
 import model.sql.query.SQLConOutline;
 import model.sql.query.SQLResult;
 import model.sql.query.SQLResultTable;
+import model.sql.query.TableOutline;
 
 public abstract class SQLService {
 
 	protected Connection conn = null;
-	
-	public SQLService() {}
-	public abstract boolean getService();
+	protected String driverClassName = null;
+
+
+	public SQLService(String driverClassName) {
+		this.driverClassName = driverClassName;
+	}
+	public abstract String getConURL();
+	public abstract SQLConConfig getSQLConConfig();
+	public boolean getService() {
+		String link = getConURL();
+		SQLConConfig config = getSQLConConfig();
+		try {
+			Class.forName(driverClassName);
+		} catch (ClassNotFoundException e) {
+			System.err.println(driverClassName + " can't be loaded");
+			e.printStackTrace();
+			return false;
+		}
+		try {
+			conn = DriverManager.getConnection(link, config.user, config.password);
+		} catch (SQLException e) {
+			System.err.println("Can't connect the database");
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
+	// get the information about this connection
+	public SQLConOutline getSQLConInfo() {
+		SQLConOutline info = new SQLConOutline();
+		info.conConfig = getSQLConConfig();
+		info.dbs = new ArrayList<DatabaseOutline>();
+
+		for (String dbName : getDatabaseNames()) {
+			DatabaseOutline dbInfo = new DatabaseOutline(dbName);
+			dbInfo.tables = new ArrayList<TableOutline>();
+			for (String tbName : getTableNames(dbName)) {
+				dbInfo.tables.add(new TableOutline(tbName));
+			}
+			info.dbs.add(dbInfo);
+		}
+		return info;
+	}
 	// get the list of database name
 	public ArrayList<String> getDatabaseNames() {
 		ArrayList<String> dbList = new ArrayList<String>();
@@ -54,9 +99,6 @@ public abstract class SQLService {
 		}
 		return tableList;
 	}
-
-	// get the information about this connection
-	public abstract SQLConOutline getSQLConInfo();
 
 	public SQLResult getResult(String sqlCode) {
 
@@ -173,7 +215,7 @@ public abstract class SQLService {
 	// create, drop no SQLResultTable to return
 	protected String getCreateResult(Connection conn, String qurey) {
 		try (PreparedStatement ps = conn.prepareStatement(qurey)) {
-			if (ps.execute())
+			if (ps.executeUpdate() == 0)
 				return new String("Successful!");
 			else
 				return new String("Failed!");

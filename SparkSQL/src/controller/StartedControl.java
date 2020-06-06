@@ -167,10 +167,10 @@ public class StartedControl extends Controller {
 
 	SQLService getSQLService(SQLConConfig config) {
 		switch (config.type) {
-		case SPARK:
-			return new SparkSQLService((SparkSQLConConfig) config);
 		case MYSQL:
 			return new MySQLService((MySQLConConfig)config);
+		case SPARK:
+			return new SparkSQLService((SparkSQLConConfig) config);
 		default:
 			return null;
 		}
