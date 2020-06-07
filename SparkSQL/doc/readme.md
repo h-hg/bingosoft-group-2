@@ -5,7 +5,7 @@
 - `controller`：用于连接`view`和`model`，承接与用户交互的功能
 
 ## view
-由于没有`JavaFX Scene Builder`这种提供界面与逻辑代码分离的工具，我们自己实现了一套简单的视图逻辑分离的模式。
+由于没有使用 JavaFX Scene Builder 这种提供界面与逻辑代码分离的工具，我们自己实现了一套简单的视图逻辑分离的模式。
 
 我们将窗口(`Win`)作为我们 UI 元素的根类，其他 UI 元素均从它派生而出，它只有一个属性`name`用以标志其id，其函数`show`、`close`则是它 UI 界面在用户面前呈现、销毁的函数接口。
 
@@ -277,25 +277,30 @@ class SparkSQLService {
 ```
 
 # 查询的实现
-本次实验的查询任务可划分为这几部分：`不同类型数据库的查询`, `CURD查询操作`, `优化操作`。这部分代码存放在model\sql\services\SQLService.java文件中。
-### 不同类型数据库的查询
-课程上连接PostgreSQL是使用Navicat，而连接SparkSQL和MySQL数据库是使用Xshell，没有图形界面，因此我们决定对这SparkSQL和MySQL这两者作为本次实验的操作对象。鉴于SparkSQL和MySQL两者语法相似，故使用同一个接口进行查询操作（SQLService文件下的getResult()方法），使用各自的驱动进行连接数据库进行操作即可。
-### CRUD查询操作
-数据库的CRUD操作在本次实验可以分为三类：`查询操作`, `修改操作`, `创建和删除操作`, 划分操作类别的实现原理是提取SQL语句的第一个单词进行判断划分，由SQLService文件下的getOperationType（）方法实现。
-- 查询操作
-  相关代码是SQLService文件下的getRetrieveResult()方法。划分该类别的依据是是否有返回结果。因此`describe`, `show`, `select`这些的语句归属于该类别。该操作的主要任务是获取查询结果（包括结果的列名称和结果内容），使用java.sql.Connection下的executeQuery()方法，返回ResultSet类型，再分别将返回类型中的列信息，以及内容提取出来存放到链表中返回到前端进行展示。其中列信息的存放在ResultSet的MetaData里边，可调用getMetaData()和getColumnCount()进行获取。而查询的结果内容则直接从ResultSet提取即可。最后将两者存放在同一SqlResultTable对象进行返回。
-- 修改操作
-  修改操作是没有返回执行结果的，只有执行成功与否的信息。这类操作包含`delete`, `update`, `insert`, `alter`等表内操作，这类操作不返回数据，因此可以使用java.sql.Connection下的executeUpdate()方法，会返回操作的对象表对应的行号或者列号，以此作为操作成功与否的判断依据
-- 创建和删除操作
-  该操作类型是对整个表进行操作，对应以`create`, `drop`开头的创建和删除表的SQL语句，该操作也不会返回数据。正常MySQL数据库进行该操作是使用java.sql.Connection下的execute()方法，鉴于SparkSQL和MySQL两者使用这一方法进行操作后返回的`boolean`类型的值不一致，最后采用executeUpdate()方法。返回`int`类型，值为`0`则操作成功。
+本次实验的查询任务可划分为这几部分：不同类型数据库的查, CURD查询操作, 优化操作。这部分代码存放在model\sql\services\SQLService.java文件中。
 
-### 优化操作
-查询的优化操作并不是指查询效率上的优化，在本实验中是指更为人性化的操作，主要进行两方面的优化：`多语句执行`, `大小写转换`。
+## 不同类型数据库的查询
+课程上连接PostgreSQL是使用Navicat，而连接SparkSQL和MySQL数据库是使用Xshell，没有图形界面，因此我们决定对这SparkSQL和MySQL这两者作为本次实验的操作对象。鉴于SparkSQL和MySQL两者语法相似，故使用同一个接口进行查询操作（SQLService文件下的`getResult()`方法），使用各自的驱动进行连接数据库进行操作即可。
 
-- 多语句执行
-  考虑到用户可能想一次性获取多个结果或者查询多条SQL语句，在getResult()方法中做了些许改动，将输入的查询语句先调用String.split(";")进行划分，然后遍历执行，最后一次性放回所有查询结果和信息。
+## CRUD查询操作
+数据库的CRUD操作在本次实验可以分为三类：查询操作, 修改操作, 创建和删除操作, 划分操作类别的实现原理是提取 SQL 语句的第一个单词进行判断划分，由SQLService文件下的`getOperationType()`方法实现。
+
+### 查询操作
+相关代码是 SQLService 文件下的`getRetrieveResult()`方法。划分该类别的依据是是否有返回结果。因此`describe`, `show`, `select`这些的语句归属于该类别。该操作的主要任务是获取查询结果（包括结果的列名称和结果内容），使用`java.sql.Connection`下的`executeQuery()`方法，返回`ResultSet`类型，再分别将返回类型中的列信息，以及内容提取出来存放到链表中返回到前端进行展示。其中列信息的存放在`ResultSet`的`MetaData`里边，可调用`getMetaData()`和`getColumnCount()`进行获取。而查询的结果内容则直接从`ResultSet`提取即可。最后将两者存放在同一`SqlResultTable`对象进行返回。
+
+### 修改操作
+修改操作是没有返回执行结果的，只有执行成功与否的信息。这类操作包含`delete`, `update`, `insert`, `alter`等表内操作，这类操作不返回数据，因此可以使用`java.sql.Connection`下的`executeUpdate()`方法，会返回操作的对象表对应的行号或者列号，以此作为操作成功与否的判断依据
+
+### 创建和删除操作
+该操作类型是对整个表进行操作，对应以`create`, `drop`开头的创建和删除表的SQL语句，该操作也不会返回数据。正常 MySQL 数据库进行该操作是使用`java.sql.Connection`下的`execute()`方法，鉴于 SparkSQL 和 MySQL 两者使用这一方法进行操作后返回的`boolean`类型的值不一致，最后采用`executeUpdate()`方法。返回`int`类型，值为`0`则操作成功。
+
+## 优化操作
+查询的优化操作并不是指查询效率上的优化，在本实验中是指更为人性化的操作，主要进行两方面的优化：多语句执行、大小写转换。
+
+### 多语句执行
+考虑到用户可能想一次性获取多个结果或者查询多条SQL语句，在`getResult()`方法中做了些许改动，将输入的查询语句先调用`String.split(";")`进行划分，然后遍历执行，最后一次性放回所有查询结果和信息。
   
-- 大小写转换 
-  大小写转换主要针对的是每个单个的查询语句的首单词，像第二部分提到的那些单词(`select`, `delete`, `create`......)在大写情况下MySQL和SparkSQL是无法识别的，而像表名和`from`, `into`, `values`......这些则可以识别，考虑用户可能使用过其他有图形界面的工具（例如Navicat），习惯使用大写格式进行SQL查询，以此在每个查询语句进行查询前对其进行首单词的修改，使其能够被数据库识别。具体由changeFirstWordToLowerCase()方法实现。
+### 大小写转换 
+大小写转换主要针对的是每个单个的查询语句的首单词，像第二部分提到的那些单词(`select`, `delete`, `create`......)在大写情况下 MySQL 和 SparkSQL 是无法识别的，而像表名和`from`, `into`, `values`......这些则可以识别，考虑用户可能使用过其他有图形界面的工具（例如Navicat），习惯使用大写格式进行 SQL 查询，以此在每个查询语句进行查询前对其进行首单词的修改，使其能够被数据库识别。具体由`changeFirstWordToLowerCase()`方法实现。
 
 # 你们有补充的也上

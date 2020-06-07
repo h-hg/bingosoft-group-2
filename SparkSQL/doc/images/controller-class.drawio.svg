@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="271px" height="404px" viewBox="-0.5 -0.5 271 404" content="&lt;mxfile host=&quot;&quot; modified=&quot;2020-06-07T02:50:27.305Z&quot; agent=&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.45.1 Chrome/78.0.3904.130 Electron/7.2.4 Safari/537.36&quot; etag=&quot;4tC2OZYEBm7wi6en87qf&quot; version=&quot;13.1.3&quot;&gt;&lt;diagram id=&quot;6hGFLwfOUW9BJ-s0fimq&quot; name=&quot;Page-1&quot;&gt;7ZhNb6MwEIZ/DVJ76CpA89FjId3dQyp1Nyvt2QUHrBoGGbck/fU7xjYfIVmhFvXSSlGEX4+Nx8/YbxvHD7P9D0GK9B5iyh1vFu8df+143tK9xm8lHLQwXy21kAgWa8lthS17pUacGfWZxbTsBUoALlnRFyPIcxrJnkaEgKoftgPef2tBEjoQthHhQ/Uvi2Wq1ZW3bPWflCWpfbO7uNE9GbHBJpMyJTFUHcm/c/xQAEj9lO1DytXe2X3R476f6W0WJmguRw1Y6BEvhD+b5ELIpQDOqTBLlAebd1mxjJMcW8EOo7amx8c24SzJ8TnCF+NIP3ihQjLcslvTIaFANUoZjzfkAM9qeaUk0ZNtBSkI9orTEo5dLgrYLaSh7y16EVs1EuUZqoKWGPNgc3aPpHuy7wVuSCmNEGGapCjZY52GGpgRkbA8ACkhM0FmgzAduj+7y27DDmueQkalOGCIGdAUrqn3hWlWbfG4Vku7hTMzIjEFmzRTt0zxwWA9g3g5QOx4gSp7RlXd36rTcyjogDbmK2sKAp5oCBwQ6zoHjZ9xfiTZCuB0J8/yLwsSsTzZ1DHr61b5bbJWEuDYHa+PRcrimOaKHUgiiQalqBTAclnvyjzAD+5TOPs2d+a48BDbbtvGjwoXEgsbcyGsZkaxCiqqKmEk4MVpwoaotxhH1Ma9C+jqBNAjdpzVTDQ7e0e5bwKXIQJOW1J/FMj1lTug6Q9p+ifIcfJI+QOUTDJQ8wsde0T0I6DNvXHQVhMwuzlzCMsUqotLfQpfAMNVhfiuvnhUQMShpP2IT3pOu5bjTcF/7DV8PcEtbA2/UwDbXxtM1djtl9dO5LWNZzY385By48e9q3kKs7Xr7WC+wqZG/Zfl5hgzWn3aYzyKceeP4ZF2e5rpBHZr3fXLbt8J7YTdnoQ2gd16/hm77d25F82xvOzZrq9mypk0YQER/3XohMpm2h1LbKzWUBgM+PL8D70sxhqA+wafx2b7z3rd1/nFw7/7Bw==&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs>
+        <clipPath id="mx-clip-114-31-152-26-0">
+            <rect x="114" y="31" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-114-65-152-40-0">
+            <rect x="114" y="65" width="152" height="40"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-231-202-26-0">
+            <rect x="4" y="231" width="202" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-265-202-140-0">
+            <rect x="4" y="265" width="202" height="140"/>
+        </clipPath>
+    </defs>
+    <g>
+        <path d="M 110 26 L 110 0 L 270 0 L 270 26" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 110 26 L 110 100 L 270 100 L 270 26" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 110 26 L 270 26" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" font-style="italic" text-anchor="middle" font-size="12px">
+            <text x="189.5" y="17.5">
+                Controller
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" clip-path="url(#mx-clip-114-31-152-26-0)" font-size="12px">
+            <text x="115.5" y="43.5">
+                + field: type
+            </text>
+        </g>
+        <path d="M 110 56 L 270 56" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-style="italic" clip-path="url(#mx-clip-114-65-152-40-0)" font-size="12px">
+            <text x="115.5" y="77.5">
+                + show(): void
+            </text>
+            <text x="115.5" y="91.5">
+                + close(): void
+            </text>
+        </g>
+        <path d="M 0 226 L 0 200 L 210 200 L 210 226" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 0 226 L 0 400 L 210 400 L 210 226" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 0 226 L 210 226" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" font-style="italic" text-anchor="middle" font-size="12px">
+            <text x="104.5" y="217.5">
+                SQLConControl
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" clip-path="url(#mx-clip-4-231-202-26-0)" font-size="12px">
+            <text x="5.5" y="243.5">
+                - SQLConWin: view
+            </text>
+        </g>
+        <path d="M 0 256 L 210 256" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" clip-path="url(#mx-clip-4-265-202-140-0)" font-size="12px">
+            <text x="5.5" y="277.5">
+                + SQLConControl(SQLConWin)
+            </text>
+            <text x="5.5" y="291.5">
+                # initControlBar(): void
+            </text>
+            <text x="5.5" y="305.5">
+                + getSQLConConfig(): SQLConfig
+            </text>
+            <text x="5.5" y="319.5">
+                + show(): void
+            </text>
+            <text x="5.5" y="333.5">
+                + close(): void
+            </text>
+        </g>
+    </g>
+</svg>

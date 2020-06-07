@@ -1,0 +1,846 @@
+<!DOCTYPE html><html><head>
+      <title>readme</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\h-hg\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.10\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="%E7%B1%BB%E7%9A%84%E8%AE%BE%E8%AE%A1">&#x7C7B;&#x7684;&#x8BBE;&#x8BA1;</h1>
+
+<p>&#x5728;&#x672C;&#x6B21;&#x5B9E;&#x9A8C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x9075;&#x5B88;&#x4E86;<code>MVC</code>&#x7684;&#x8BBE;&#x8BA1;&#x91CC;&#x9762;&#xFF0C;&#x5C06;&#x4EE3;&#x7801;&#x5206;&#x6210;&#x4E86;<code>model</code>&#x3001;<code>view</code>&#x548C;<code>controller</code>&#x4E09;&#x4E2A;&#x5305;&#x3002;</p>
+<ul>
+<li><code>view</code>&#xFF1A;&#x5305;&#x542B;&#x4E86;&#x7A97;&#x53E3;&#x7684; UI &#x5E03;&#x5C40;&#x7684;&#x8BBE;&#x8BA1;</li>
+<li><code>model</code>&#xFF1A;SQL &#x6A21;&#x578B;&#x7684;&#x8BBE;&#x8BA1;</li>
+<li><code>controller</code>&#xFF1A;&#x7528;&#x4E8E;&#x8FDE;&#x63A5;<code>view</code>&#x548C;<code>model</code>&#xFF0C;&#x627F;&#x63A5;&#x4E0E;&#x7528;&#x6237;&#x4EA4;&#x4E92;&#x7684;&#x529F;&#x80FD;</li>
+</ul>
+<h2 class="mume-header" id="view">view</h2>
+
+<p>&#x7531;&#x4E8E;&#x6CA1;&#x6709;<code>JavaFX Scene Builder</code>&#x8FD9;&#x79CD;&#x63D0;&#x4F9B;&#x754C;&#x9762;&#x4E0E;&#x903B;&#x8F91;&#x4EE3;&#x7801;&#x5206;&#x79BB;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x5957;&#x7B80;&#x5355;&#x7684;&#x89C6;&#x56FE;&#x903B;&#x8F91;&#x5206;&#x79BB;&#x7684;&#x6A21;&#x5F0F;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x7A97;&#x53E3;(<code>Win</code>)&#x4F5C;&#x4E3A;&#x6211;&#x4EEC; UI &#x5143;&#x7D20;&#x7684;&#x6839;&#x7C7B;&#xFF0C;&#x5176;&#x4ED6; UI &#x5143;&#x7D20;&#x5747;&#x4ECE;&#x5B83;&#x6D3E;&#x751F;&#x800C;&#x51FA;&#xFF0C;&#x5B83;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;<code>name</code>&#x7528;&#x4EE5;&#x6807;&#x5FD7;&#x5176;id&#xFF0C;&#x5176;&#x51FD;&#x6570;<code>show</code>&#x3001;<code>close</code>&#x5219;&#x662F;&#x5B83; UI &#x754C;&#x9762;&#x5728;&#x7528;&#x6237;&#x9762;&#x524D;&#x5448;&#x73B0;&#x3001;&#x9500;&#x6BC1;&#x7684;&#x51FD;&#x6570;&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x5728;<code>Win</code>&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x6211;&#x4EEC;&#x8BBE;&#x8BA1;&#x4E86;<code>StartedWin</code>&#xFF08;&#x4E3B;&#x4F53;&#x7A97;&#x53E3;&#xFF09;&#x548C;<code>SQLConWin</code>&#xFF08;SQL &#x8FDE;&#x63A5;&#x7A97;&#x53E3;&#x7684;&#x57FA;&#x7C7B;&#xFF09;&#xFF0C;&#x5176;&#x4E2D;<code>SQLConWin</code>&#x5305;&#x542B;&#x8FDE;&#x63A5;&#x540D;&#x79F0;&#x3001;&#x6570;&#x636E;&#x5E93;&#x7684; URL&#x3001;&#x7AEF;&#x53E3;&#x3001;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x8FD9;&#x4E94;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x8F93;&#x5165;&#x6846;&#x3002;</p>
+<p><code>SQLConWinWithDbName</code>&#x5219;&#x662F;&#x7EE7;&#x627F;&#x4E86;<code>SQLConWin</code>&#xFF0C;&#x5E76;&#x5728;&#x4E0A;&#x9762;&#x6DFB;&#x52A0;&#x4E86;&#x521D;&#x59CB;&#x6570;&#x636E;&#x5E93;&#x540D;&#x7684;&#x8F93;&#x5165;&#x6846;&#xFF0C;<code>MySQLConWin</code>&#x548C;<code>SparkSQLConWin</code>&#x5219;&#x662F;<code>SQLConWinWithDbName</code>&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#xFF0C;&#x6CA1;&#x6709;&#x6DFB;&#x52A0;&#x4EFB;&#x4F55; UI &#x5143;&#x7D20;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x8FD9;&#x4E9B;&#x8BBE;&#x8BA1;&#xFF0C;&#x4F7F;&#x5F97;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x51FA;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x8FDE;&#x63A5;&#x7A97;&#x53E3;&#x3002;</p>
+<h2 class="mume-header" id="model">model</h2>
+
+<p>model &#x662F; SQL &#x6A21;&#x578B;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x5305;&#x542B;&#x4E86; <code>connect</code>&#x3001;<code>query</code>&#x548C;<code>services</code>&#x4E09;&#x4E2A;&#x5B50;&#x5305;</p>
+<h3 class="mume-header" id="connect">connect</h3>
+
+<p>&#x8FD9;&#x4E2A;&#x5305;&#x4E3B;&#x8981;&#x7528;&#x5B9A;&#x4E49;&#x8FDE;&#x63A5; SQL &#x6240;&#x9700;&#x8981;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x5176;&#x4E2D;<code>SQLConConfig</code>&#x662F;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x7684;&#x57FA;&#x7C7B;&#xFF0C;&#x6709;&#x7740;&#x8FDE;&#x63A5;&#x540D;&#x79F0;&#x3001;&#x6570;&#x636E;&#x5E93;&#x7684; URL&#x3001;&#x7AEF;&#x53E3;&#x3001;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x4E94;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;&#x5B83;&#x5BF9;&#x5E94;&#x7740;<code>SQLConWin</code>&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x7C7B;&#x5982;&#x4E0A;&#x9762;<code>view</code>&#x7684;&#x63CF;&#x8FF0;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5982;&#x4E0B;&#x7684;&#x5BF9;&#x5E94;</p>
+<ul>
+<li><code>SQLConConfig</code> - <code>SQLConWin</code></li>
+<li><code>SQLConConfigWithDbName</code> - <code>SQLConWinWithDbName</code></li>
+<li><code>MySQLConConfig</code> - <code>MySQLConWin</code></li>
+<li><code>SparkSQLConConfig</code> - <code>SparkSQLConWin</code></li>
+</ul>
+<p>&#x8FD9;&#x4E9B;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x7684;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#x4E5F;&#x8DDF;&#x5BF9;&#x5E94;&#x7A97;&#x53E3;&#x4E00;&#x6837;&#x3002;</p>
+<h3 class="mume-header" id="query">query</h3>
+
+<p>&#x8FD9;&#x4E2A;&#x5305;&#x4E3B;&#x8981;&#x5B9A;&#x4E49;&#x6211;&#x4EEC;&#x4E00;&#x4E9B;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7684;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF0C;&#x5373;&#x4E3B;&#x7A97;&#x53E3;&#x5BFC;&#x822A;&#x680F;&#xFF08;&#x6216;&#x8005;&#x8BF4;&#x4FA7;&#x8FB9;&#x680F;&#xFF09;&#x7684;&#x8FDE;&#x63A5;&#x6982;&#x8981;&#x7C7B;&#x3001;SQL &#x8BED;&#x53E5;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7C7B;&#x3002;</p>
+<p>&#x8FDE;&#x63A5;&#x6982;&#x8981;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li><code>SQLConOutline</code>: &#x8868;&#x793A;&#x4E00;&#x4E2A;SQL &#x8FDE;&#x63A5;&#x7684;&#x6982;&#x8981;&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;&#x3001;&#x5176;&#x8FDE;&#x63A5;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF08;databse&#xFF09;&#x7684;&#x6982;&#x8981;</li>
+<li><code>DatabaseOutline</code>: &#x8868;&#x793A;&#x67D0;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6982;&#x8981;</li>
+<li><code>TableOutline</code>: &#x8868;&#x793A;&#x67D0;&#x4E00;&#x4E2A;&#x8868;&#x7684;&#x6982;&#x8981;</li>
+</ul>
+<p>SQL &#x8BED;&#x53E5;&#x67E5;&#x8BE2;&#x7ED3;&#x6784;&#x7C7B;</p>
+<ul>
+<li><code>SQLResult</code>&#xFF1A;&#x8868;&#x793A;&#x4E86;&#x591A;&#x6761;&#xFF08;&#x5305;&#x542B;&#x4E00;&#x6761;&#xFF09; SQL &#x8BED;&#x53E5;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x6784;&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E2A;<code>info</code>&#xFF08;&#x7528;&#x4EE5;&#x4FDD;&#x5B58;&#x67E5;&#x8BE2;&#x7684;&#x6587;&#x672C;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982;SQL&#x67E5;&#x8BE2;&#x6210;&#x529F;&#x4FE1;&#x606F;&#x3001;&#x67E5;&#x8BE2;&#x5931;&#x8D25;&#x7684;&#x9519;&#x8BEF;&#x539F;&#x56E0;&#xFF09;&#x548C;<code>tables</code>&#xFF08;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;<code>SQLResultTable</code>&#x7684;&#x6570;&#x7EC4;&#xFF09;</li>
+<li><code>SQLResutlTable</code>&#xFF1A;&#x8868;&#x793A;&#x50CF;<code>show</code>&#x3001;<code>describe</code> &#x3001;<code>select</code>&#x7B49;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x8868;&#x793A;&#x7684;&#x8868;&#x3002;</li>
+</ul>
+<h3 class="mume-header" id="services">services</h3>
+
+<p>&#x8FD9;&#x4E2A;&#x5305;&#x5B9A;&#x4E49;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x4ECE;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x8FDE;&#x63A5;&#x5230;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x7684;&#x670D;&#x52A1;&#x3002;</p>
+<p>&#x7531;&#x4E8E;<code>jdbc</code>&#x5DF2;&#x7ECF;&#x7EDF;&#x4E00;&#x4E86;&#x5404;&#x79CD;&#x6570;&#x636E;&#x8FDE;&#x63A5;&#x7684;&#x5E93;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x8FDE;&#x63A5;&#x7684;&#x534F;&#x8BAE;&#x7C7B;&#x578B;&#x548C;&#x9A71;&#x52A8;&#x7C7B;&#x540D;&#xFF0C;&#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x63D0;&#x4F9B; SQL &#x670D;&#x52A1;&#x7684;&#x7C7B;&#x4E3B;&#x8981;&#x5206;&#x6210;&#x4E24;&#x79CD;&#xFF0C;&#x4E00;&#x79CD;&#x662F;<code>SQLService</code>&#x7684;&#x865A;&#x57FA;&#x7C7B;&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x50CF;<code>SparkSQLService</code>&#x548C;<code>MySQLService</code>&#x7684;&#x5177;&#x4F53;&#x7C7B;&#xFF0C;&#x865A;&#x57FA;&#x7C7B;&#x5B9E;&#x73B0;&#x4E86;&#x5982;&#x679C;&#x67E5;&#x8BE2;&#x3001;&#x83B7;&#x53D6;&#x4FE1;&#x606F;&#x7B49;&#x63A5;&#x53E3;&#xFF0C;&#x800C;&#x5177;&#x4F53;&#x7C7B;&#x5219;&#x662F;&#x7EE7;&#x627F;&#x4E86;&#x865A;&#x57FA;&#x7C7B;&#xFF0C;&#x5E76;&#x4E3A;&#x4E0A;&#x8FF0;&#x63A5;&#x53E3;&#x63D0;&#x4F9B;<code>getConURL</code>&#xFF08;&#x8FDE;&#x63A5;&#x7684;URL&#xFF09;&#x548C;<code>driverClassDriver</code>&#xFF08;&#x9A71;&#x52A8;&#x7C7B;&#x540D;&#xFF09; &#x3002;</p>
+<h2 class="mume-header" id="controller">controller</h2>
+
+<p>&#x8FD9;&#x4E2A;&#x5305;&#x5B9E;&#x73B0;&#x4E86;&#x63A7;&#x5236;&#x5668;&#xFF0C;&#x8FDE;&#x63A5;&#x4E86; view &#x548C; model&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x7B49; UI &#x4E8B;&#x4EF6;</p>
+<h2 class="mume-header" id="uml-%E5%9B%BE">UML &#x56FE;</h2>
+
+<p>&#x4E0B;&#x9762;&#x662F;&#x6211;&#x4EEC;&#x6240;&#x6709;&#x7C7B;&#x5177;&#x4F53;&#x7684; UML &#x56FE;&#x3002;</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="1185px" preserveAspectRatio="none" style="width:3461px;height:1185px;" version="1.1" viewBox="0 0 3461 1185" width="3461px" zoomAndPan="magnify"><defs><filter height="300%" id="flmm9g5209uur" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[3ff016c1aa5003d713567a073e2181a6]
+cluster application--><polygon fill="#FFFFFF" filter="url(#flmm9g5209uur)" points="22,343.5,105,343.5,112,367.1094,115,367.1094,115,443.5,22,443.5,22,343.5" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="112" y1="367.1094" y2="367.1094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="77" x="26" y="360.0332">application</text><!--MD5=[86cbce8df1eb9d604fbbb2fa357940f8]
+cluster view--><polygon fill="#FFFFFF" filter="url(#flmm9g5209uur)" points="139,24,178,24,185,47.6094,650,47.6094,650,912.5,139,912.5,139,24" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="139" x2="185" y1="47.6094" y2="47.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="33" x="143" y="40.5332">view</text><!--MD5=[cbd2390f0d39efd46451ab80fd962fb7]
+cluster view.connect--><polygon fill="#FFFFFF" filter="url(#flmm9g5209uur)" points="163,336.5,263,336.5,270,360.1094,496,360.1094,496,888.5,163,888.5,163,336.5" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="163" x2="270" y1="360.1094" y2="360.1094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="94" x="167" y="353.0332">view.connect</text><!--MD5=[5d4cd377749310b66bf14896f5cd8d9b]
+cluster model--><polygon fill="#FFFFFF" filter="url(#flmm9g5209uur)" points="1520,207,1569,207,1576,230.6094,3439,230.6094,3439,957,1520,957,1520,207" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="1520" x2="1576" y1="230.6094" y2="230.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="43" x="1524" y="223.5332">model</text><!--MD5=[bcb4e640405adb3157d5c83a548333f4]
+cluster model.sql--><polygon fill="#FFFFFF" filter="url(#flmm9g5209uur)" points="1544,251,1618,251,1625,274.6094,3415,274.6094,3415,933,1544,933,1544,251" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="1544" x2="1625" y1="274.6094" y2="274.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="68" x="1548" y="267.5332">model.sql</text><!--MD5=[722d9ccf1d82762d42bea45186bb2af4]
+cluster model.sql.connect--><polygon fill="#FFFFFF" filter="url(#flmm9g5209uur)" points="2662,295,2797,295,2804,318.6094,3391,318.6094,3391,881.5,2662,881.5,2662,295" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="2662" x2="2804" y1="318.6094" y2="318.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="129" x="2666" y="311.5332">model.sql.connect</text><!--MD5=[d16bd63d8ec5d73aa25a65bc9caf82ab]
+cluster model.sql.query--><polygon fill="#FFFFFF" filter="url(#flmm9g5209uur)" points="2189,316,2307,316,2314,339.6094,2638,339.6094,2638,909,2189,909,2189,316" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="2189" x2="2314" y1="339.6094" y2="339.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="112" x="2193" y="332.5332">model.sql.query</text><!--MD5=[e3fa53074aa36e0be0a7941e4c306a37]
+cluster model.sql.services--><polygon fill="#FFFFFF" filter="url(#flmm9g5209uur)" points="1661,322.5,1800,322.5,1807,346.1094,2165,346.1094,2165,642,1661,642,1661,322.5" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="1661" x2="1807" y1="346.1094" y2="346.1094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="133" x="1665" y="339.0332">model.sql.services</text><!--MD5=[c3a9d24a21b39e5c92db582890ad26f6]
+cluster control--><polygon fill="#FFFFFF" filter="url(#flmm9g5209uur)" points="674,507,730,507,737,530.6094,1496,530.6094,1496,1173,674,1173,674,507" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="674" x2="737" y1="530.6094" y2="530.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="50" x="678" y="523.5332">control</text><!--MD5=[001b696193640fd44b64ab35941a3fd2]
+cluster control.connect--><polygon fill="#FFFFFF" filter="url(#flmm9g5209uur)" points="968,733,1085,733,1092,756.6094,1472,756.6094,1472,1149,968,1149,968,733" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="968" x2="1092" y1="756.6094" y2="756.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="111" x="972" y="749.5332">control.connect</text><!--MD5=[84718776d214be480e4c259efcb737fc]
+class Main--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="48" id="Main" style="stroke: #A80036; stroke-width: 1.5;" width="58" x="39" y="379.5"/><ellipse cx="54" cy="395.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M56.7656,391.375 Q56.9219,391.1563 57.1094,391.0469 Q57.2969,390.9375 57.5156,390.9375 Q57.8906,390.9375 58.125,391.2031 Q58.3594,391.4531 58.3594,392.0625 L58.3594,393.5156 Q58.3594,394.125 58.125,394.3906 Q57.8906,394.6563 57.5156,394.6563 Q57.1719,394.6563 56.9688,394.4531 Q56.7656,394.2656 56.6563,393.75 Q56.6094,393.3906 56.4219,393.2031 Q56.0938,392.8281 55.4844,392.6094 Q54.875,392.3906 54.25,392.3906 Q53.4844,392.3906 52.8438,392.7188 Q52.2188,393.0469 51.7188,393.7969 Q51.2344,394.5469 51.2344,395.5781 L51.2344,396.6719 Q51.2344,397.9063 52.125,398.7344 Q53.0156,399.5469 54.6094,399.5469 Q55.5469,399.5469 56.2031,399.2969 Q56.5938,399.1406 57.0156,398.7031 Q57.2813,398.4375 57.4219,398.3594 Q57.5781,398.2813 57.7813,398.2813 Q58.1094,398.2813 58.3594,398.5469 Q58.625,398.7969 58.625,399.1406 Q58.625,399.4844 58.2813,399.8906 Q57.7813,400.4688 56.9844,400.7969 Q55.9063,401.25 54.6094,401.25 Q53.0938,401.25 51.8906,400.625 Q50.9063,400.125 50.2188,399.0625 Q49.5313,397.9844 49.5313,396.7031 L49.5313,395.5469 Q49.5313,394.2188 50.1406,393.0781 Q50.7656,391.9219 51.8594,391.3125 Q52.9531,390.6875 54.1875,390.6875 Q54.9219,390.6875 55.5625,390.8594 Q56.2188,391.0156 56.7656,391.375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="26" x="68" y="400.4102">Main</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="40" x2="96" y1="411.5" y2="411.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="40" x2="96" y1="419.5" y2="419.5"/><!--MD5=[5655c84227694af7943d3c60ac6af392]
+class Win--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="131.0156" id="Win" style="stroke: #A80036; stroke-width: 1.5;" width="96" x="440" y="60"/><ellipse cx="474.35" cy="76" fill="#A9DCDF" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M476.5375,77.7656 L472.3969,77.7656 L471.975,78.7969 L472.3969,78.7969 Q473.0063,78.7969 473.2719,79.0313 Q473.5375,79.2656 473.5375,79.6563 Q473.5375,80.0313 473.2719,80.2656 Q473.0063,80.5 472.3969,80.5 L470.1,80.5 Q469.4906,80.5 469.2406,80.2656 Q468.975,80.0313 468.975,79.6406 Q468.975,79.2656 469.2563,79.0313 Q469.5219,78.7813 470.1469,78.7969 L472.8188,72.1406 L471.7094,72.1406 Q471.1,72.1406 470.8344,71.9063 Q470.5688,71.6719 470.5688,71.2813 Q470.5688,70.9063 470.8344,70.6719 Q471.1,70.4375 471.7094,70.4375 L475.3813,70.4375 L478.7719,78.7969 Q479.3656,78.7969 479.5531,78.9375 Q479.9438,79.2031 479.9438,79.6563 Q479.9438,80.0313 479.6781,80.2656 Q479.4281,80.5 478.8188,80.5 L476.5219,80.5 Q475.9125,80.5 475.6469,80.2656 Q475.3813,80.0313 475.3813,79.6406 Q475.3813,79.2656 475.6469,79.0313 Q475.9125,78.7969 476.5219,78.7969 L476.9438,78.7969 L476.5375,77.7656 Z M475.8188,76.0625 L474.4594,72.6875 L473.0844,76.0625 L475.8188,76.0625 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="21" x="492.65" y="80.9102">Win</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="441" x2="535" y1="92" y2="92"/><ellipse cx="451" cy="103" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="60" x="460" y="107.4189">name: String</text><ellipse cx="451" cy="116.8359" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="64" x="460" y="121.2549">statge: Stage</text><ellipse cx="451" cy="130.6719" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="70" x="460" y="135.0908">scene : Scene</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="441" x2="535" y1="141.5078" y2="141.5078"/><ellipse cx="451" cy="152.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="54" x="460" y="156.9268">Win(String)</text><ellipse cx="451" cy="166.3438" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="59" x="460" y="170.7627">show(): void</text><ellipse cx="451" cy="180.1797" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="60" x="460" y="184.5986">close(): void</text><!--MD5=[02f81bfab61de2d4ff5ae0a82423db78]
+class StartedWin--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="144.8516" id="StartedWin" style="stroke: #A80036; stroke-width: 1.5;" width="121" x="512.5" y="331"/><ellipse cx="540.55" cy="347" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M543.3156,342.875 Q543.4719,342.6563 543.6594,342.5469 Q543.8469,342.4375 544.0656,342.4375 Q544.4406,342.4375 544.675,342.7031 Q544.9094,342.9531 544.9094,343.5625 L544.9094,345.0156 Q544.9094,345.625 544.675,345.8906 Q544.4406,346.1563 544.0656,346.1563 Q543.7219,346.1563 543.5188,345.9531 Q543.3156,345.7656 543.2063,345.25 Q543.1594,344.8906 542.9719,344.7031 Q542.6438,344.3281 542.0344,344.1094 Q541.425,343.8906 540.8,343.8906 Q540.0344,343.8906 539.3938,344.2188 Q538.7688,344.5469 538.2688,345.2969 Q537.7844,346.0469 537.7844,347.0781 L537.7844,348.1719 Q537.7844,349.4063 538.675,350.2344 Q539.5656,351.0469 541.1594,351.0469 Q542.0969,351.0469 542.7531,350.7969 Q543.1438,350.6406 543.5656,350.2031 Q543.8313,349.9375 543.9719,349.8594 Q544.1281,349.7813 544.3313,349.7813 Q544.6594,349.7813 544.9094,350.0469 Q545.175,350.2969 545.175,350.6406 Q545.175,350.9844 544.8313,351.3906 Q544.3313,351.9688 543.5344,352.2969 Q542.4563,352.75 541.1594,352.75 Q539.6438,352.75 538.4406,352.125 Q537.4563,351.625 536.7688,350.5625 Q536.0813,349.4844 536.0813,348.2031 L536.0813,347.0469 Q536.0813,345.7188 536.6906,344.5781 Q537.3156,343.4219 538.4094,342.8125 Q539.5031,342.1875 540.7375,342.1875 Q541.4719,342.1875 542.1125,342.3594 Q542.7688,342.5156 543.3156,342.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="60" x="557.45" y="351.9102">StartedWin</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="513.5" x2="632.5" y1="363" y2="363"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="513.5" x2="632.5" y1="371" y2="371"/><ellipse cx="523.5" cy="382" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="89" x="532.5" y="386.4189">StartedWin(String)</text><ellipse cx="523.5" cy="395.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="62" x="532.5" y="400.2549">show(): void</text><polygon fill="#FFFF44" points="523.5,404.6719,527.5,408.6719,523.5,412.6719,519.5,408.6719" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="69" x="532.5" y="414.0908">initRoot(): void</text><polygon fill="#FFFF44" points="523.5,418.5078,527.5,422.5078,523.5,426.5078,519.5,422.5078" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="73" x="532.5" y="427.9268">initMenu(): void</text><polygon fill="#FFFF44" points="523.5,432.3438,527.5,436.3438,523.5,440.3438,519.5,436.3438" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="83" x="532.5" y="441.7627">initNavBar(): void</text><polygon fill="#FFFF44" points="523.5,446.1797,527.5,450.1797,523.5,454.1797,519.5,450.1797" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="85" x="532.5" y="455.5986">initMainPar(): void</text><polygon fill="#FFFF44" points="523.5,460.0156,527.5,464.0156,523.5,468.0156,519.5,464.0156" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="95" x="532.5" y="469.4346">initStatusBar(): void</text><!--MD5=[86415960cac7fdcd5cb76956ba1b4f85]
+class SQLConWin--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="61.8359" id="SQLConWin" style="stroke: #A80036; stroke-width: 1.5;" width="120" x="343" y="372.5"/><ellipse cx="367" cy="388.5" fill="#A9DCDF" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M369.1875,390.2656 L365.0469,390.2656 L364.625,391.2969 L365.0469,391.2969 Q365.6563,391.2969 365.9219,391.5313 Q366.1875,391.7656 366.1875,392.1563 Q366.1875,392.5313 365.9219,392.7656 Q365.6563,393 365.0469,393 L362.75,393 Q362.1406,393 361.8906,392.7656 Q361.625,392.5313 361.625,392.1406 Q361.625,391.7656 361.9063,391.5313 Q362.1719,391.2813 362.7969,391.2969 L365.4688,384.6406 L364.3594,384.6406 Q363.75,384.6406 363.4844,384.4063 Q363.2188,384.1719 363.2188,383.7813 Q363.2188,383.4063 363.4844,383.1719 Q363.75,382.9375 364.3594,382.9375 L368.0313,382.9375 L371.4219,391.2969 Q372.0156,391.2969 372.2031,391.4375 Q372.5938,391.7031 372.5938,392.1563 Q372.5938,392.5313 372.3281,392.7656 Q372.0781,393 371.4688,393 L369.1719,393 Q368.5625,393 368.2969,392.7656 Q368.0313,392.5313 368.0313,392.1406 Q368.0313,391.7656 368.2969,391.5313 Q368.5625,391.2969 369.1719,391.2969 L369.5938,391.2969 L369.1875,390.2656 Z M368.4688,388.5625 L367.1094,385.1875 L365.7344,388.5625 L368.4688,388.5625 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="68" x="383" y="393.4102">SQLConWin</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="344" x2="462" y1="404.5" y2="404.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="344" x2="462" y1="412.5" y2="412.5"/><ellipse cx="354" cy="423.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="94" x="363" y="427.9189">SQLConWin(String)</text><!--MD5=[1335384be2d42ae193e166b654f11e86]
+class SQLConWinWithDbName--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="61.8359" id="SQLConWinWithDbName" style="stroke: #A80036; stroke-width: 1.5;" width="181" x="298.5" y="550"/><ellipse cx="316.2" cy="566" fill="#A9DCDF" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M318.3875,567.7656 L314.2469,567.7656 L313.825,568.7969 L314.2469,568.7969 Q314.8563,568.7969 315.1219,569.0313 Q315.3875,569.2656 315.3875,569.6563 Q315.3875,570.0313 315.1219,570.2656 Q314.8563,570.5 314.2469,570.5 L311.95,570.5 Q311.3406,570.5 311.0906,570.2656 Q310.825,570.0313 310.825,569.6406 Q310.825,569.2656 311.1063,569.0313 Q311.3719,568.7813 311.9969,568.7969 L314.6688,562.1406 L313.5594,562.1406 Q312.95,562.1406 312.6844,561.9063 Q312.4188,561.6719 312.4188,561.2813 Q312.4188,560.9063 312.6844,560.6719 Q312.95,560.4375 313.5594,560.4375 L317.2313,560.4375 L320.6219,568.7969 Q321.2156,568.7969 321.4031,568.9375 Q321.7938,569.2031 321.7938,569.6563 Q321.7938,570.0313 321.5281,570.2656 Q321.2781,570.5 320.6688,570.5 L318.3719,570.5 Q317.7625,570.5 317.4969,570.2656 Q317.2313,570.0313 317.2313,569.6406 Q317.2313,569.2656 317.4969,569.0313 Q317.7625,568.7969 318.3719,568.7969 L318.7938,568.7969 L318.3875,567.7656 Z M317.6688,566.0625 L316.3094,562.6875 L314.9344,566.0625 L317.6688,566.0625 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="143" x="330.8" y="570.9102">SQLConWinWithDbName</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="299.5" x2="478.5" y1="582" y2="582"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="299.5" x2="478.5" y1="590" y2="590"/><ellipse cx="309.5" cy="601" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="155" x="318.5" y="605.4189">SQLConWinWithDbName(String)</text><!--MD5=[026c18ae519896bf1a6bb20a6521b20a]
+class SparkSQLConWin--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="75.6719" id="SparkSQLConWin" style="stroke: #A80036; stroke-width: 1.5;" width="132" x="179" y="796.5"/><ellipse cx="194" cy="812.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M196.7656,808.375 Q196.9219,808.1563 197.1094,808.0469 Q197.2969,807.9375 197.5156,807.9375 Q197.8906,807.9375 198.125,808.2031 Q198.3594,808.4531 198.3594,809.0625 L198.3594,810.5156 Q198.3594,811.125 198.125,811.3906 Q197.8906,811.6563 197.5156,811.6563 Q197.1719,811.6563 196.9688,811.4531 Q196.7656,811.2656 196.6563,810.75 Q196.6094,810.3906 196.4219,810.2031 Q196.0938,809.8281 195.4844,809.6094 Q194.875,809.3906 194.25,809.3906 Q193.4844,809.3906 192.8438,809.7188 Q192.2188,810.0469 191.7188,810.7969 Q191.2344,811.5469 191.2344,812.5781 L191.2344,813.6719 Q191.2344,814.9063 192.125,815.7344 Q193.0156,816.5469 194.6094,816.5469 Q195.5469,816.5469 196.2031,816.2969 Q196.5938,816.1406 197.0156,815.7031 Q197.2813,815.4375 197.4219,815.3594 Q197.5781,815.2813 197.7813,815.2813 Q198.1094,815.2813 198.3594,815.5469 Q198.625,815.7969 198.625,816.1406 Q198.625,816.4844 198.2813,816.8906 Q197.7813,817.4688 196.9844,817.7969 Q195.9063,818.25 194.6094,818.25 Q193.0938,818.25 191.8906,817.625 Q190.9063,817.125 190.2188,816.0625 Q189.5313,814.9844 189.5313,813.7031 L189.5313,812.5469 Q189.5313,811.2188 190.1406,810.0781 Q190.7656,808.9219 191.8594,808.3125 Q192.9531,807.6875 194.1875,807.6875 Q194.9219,807.6875 195.5625,807.8594 Q196.2188,808.0156 196.7656,808.375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="100" x="208" y="817.4102">SparkSQLConWin</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="180" x2="310" y1="828.5" y2="828.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="180" x2="310" y1="836.5" y2="836.5"/><ellipse cx="190" cy="847.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="94" x="199" y="851.9189">SparkSQLConWin()</text><ellipse cx="190" cy="861.3359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="62" x="199" y="865.7549">show(): void</text><!--MD5=[50d8181c94fac8d71911d8db0207d1d1]
+class MySQLConWin--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="75.6719" id="MySQLConWin" style="stroke: #A80036; stroke-width: 1.5;" width="134" x="346" y="796.5"/><ellipse cx="370" cy="812.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M372.7656,808.375 Q372.9219,808.1563 373.1094,808.0469 Q373.2969,807.9375 373.5156,807.9375 Q373.8906,807.9375 374.125,808.2031 Q374.3594,808.4531 374.3594,809.0625 L374.3594,810.5156 Q374.3594,811.125 374.125,811.3906 Q373.8906,811.6563 373.5156,811.6563 Q373.1719,811.6563 372.9688,811.4531 Q372.7656,811.2656 372.6563,810.75 Q372.6094,810.3906 372.4219,810.2031 Q372.0938,809.8281 371.4844,809.6094 Q370.875,809.3906 370.25,809.3906 Q369.4844,809.3906 368.8438,809.7188 Q368.2188,810.0469 367.7188,810.7969 Q367.2344,811.5469 367.2344,812.5781 L367.2344,813.6719 Q367.2344,814.9063 368.125,815.7344 Q369.0156,816.5469 370.6094,816.5469 Q371.5469,816.5469 372.2031,816.2969 Q372.5938,816.1406 373.0156,815.7031 Q373.2813,815.4375 373.4219,815.3594 Q373.5781,815.2813 373.7813,815.2813 Q374.1094,815.2813 374.3594,815.5469 Q374.625,815.7969 374.625,816.1406 Q374.625,816.4844 374.2813,816.8906 Q373.7813,817.4688 372.9844,817.7969 Q371.9063,818.25 370.6094,818.25 Q369.0938,818.25 367.8906,817.625 Q366.9063,817.125 366.2188,816.0625 Q365.5313,814.9844 365.5313,813.7031 L365.5313,812.5469 Q365.5313,811.2188 366.1406,810.0781 Q366.7656,808.9219 367.8594,808.3125 Q368.9531,807.6875 370.1875,807.6875 Q370.9219,807.6875 371.5625,807.8594 Q372.2188,808.0156 372.7656,808.375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="82" x="386" y="817.4102">MySQLConWin</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="347" x2="479" y1="828.5" y2="828.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="347" x2="479" y1="836.5" y2="836.5"/><ellipse cx="357" cy="847.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="108" x="366" y="851.9189">MySQLConWin(String)</text><ellipse cx="357" cy="861.3359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="62" x="366" y="865.7549">show(): void</text><!--MD5=[eb42cd3249f0fa9525d47e86ca23a0cd]
+class SQLType--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="75.6719" id="SQLType" style="stroke: #A80036; stroke-width: 1.5;" width="82" x="1560" y="365.5"/><ellipse cx="1575" cy="381.5" fill="#EB937F" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1573.8594,382.2969 L1573.8594,384.7969 L1578.1875,384.7969 L1578.1875,383.875 Q1578.1875,383.2656 1578.4219,383 Q1578.6719,382.7344 1579.0469,382.7344 Q1579.4219,382.7344 1579.6563,383 Q1579.8906,383.2656 1579.8906,383.875 L1579.8906,386.5 L1571.8906,386.5 Q1571.2656,386.5 1571,386.2656 Q1570.75,386.0313 1570.75,385.6406 Q1570.75,385.2656 1571.0156,385.0313 Q1571.2813,384.7969 1571.8906,384.7969 L1572.1563,384.7969 L1572.1563,378.1406 L1571.8906,378.1406 Q1571.2656,378.1406 1571,377.9063 Q1570.75,377.6719 1570.75,377.2813 Q1570.75,376.9063 1571,376.6719 Q1571.2656,376.4375 1571.8906,376.4375 L1579.5156,376.4375 L1579.5156,379.0313 Q1579.5156,379.6406 1579.2813,379.9063 Q1579.0625,380.1563 1578.6719,380.1563 Q1578.2969,380.1563 1578.0625,379.9063 Q1577.8281,379.6406 1577.8281,379.0313 L1577.8281,378.1406 L1573.8594,378.1406 L1573.8594,380.5938 L1575.3438,380.5938 Q1575.3438,379.9375 1575.4688,379.75 Q1575.7344,379.3438 1576.2031,379.3438 Q1576.5781,379.3438 1576.8125,379.6094 Q1577.0469,379.8594 1577.0469,380.4688 L1577.0469,382.4375 Q1577.0469,382.9844 1576.9219,383.1719 Q1576.6563,383.5625 1576.2031,383.5625 Q1575.7344,383.5625 1575.4688,383.1563 Q1575.3438,382.9688 1575.3438,382.2969 L1573.8594,382.2969 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="50" x="1589" y="386.4102">SQLType</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1561" x2="1641" y1="397.5" y2="397.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="35" x="1566" y="412.9189">SPARK</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="37" x="1566" y="426.7549">MYSQL</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1561" x2="1641" y1="433.1719" y2="433.1719"/><!--MD5=[1849283bdf4c9d217123c4584b853ccf]
+class SQLConConfig--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="144.8516" id="SQLConConfig" style="stroke: #A80036; stroke-width: 1.5;" width="320" x="2866" y="331"/><ellipse cx="2980.25" cy="347" fill="#A9DCDF" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M2982.4375,348.7656 L2978.2969,348.7656 L2977.875,349.7969 L2978.2969,349.7969 Q2978.9063,349.7969 2979.1719,350.0313 Q2979.4375,350.2656 2979.4375,350.6563 Q2979.4375,351.0313 2979.1719,351.2656 Q2978.9063,351.5 2978.2969,351.5 L2976,351.5 Q2975.3906,351.5 2975.1406,351.2656 Q2974.875,351.0313 2974.875,350.6406 Q2974.875,350.2656 2975.1563,350.0313 Q2975.4219,349.7813 2976.0469,349.7969 L2978.7188,343.1406 L2977.6094,343.1406 Q2977,343.1406 2976.7344,342.9063 Q2976.4688,342.6719 2976.4688,342.2813 Q2976.4688,341.9063 2976.7344,341.6719 Q2977,341.4375 2977.6094,341.4375 L2981.2813,341.4375 L2984.6719,349.7969 Q2985.2656,349.7969 2985.4531,349.9375 Q2985.8438,350.2031 2985.8438,350.6563 Q2985.8438,351.0313 2985.5781,351.2656 Q2985.3281,351.5 2984.7188,351.5 L2982.4219,351.5 Q2981.8125,351.5 2981.5469,351.2656 Q2981.2813,351.0313 2981.2813,350.6406 Q2981.2813,350.2656 2981.5469,350.0313 Q2981.8125,349.7969 2982.4219,349.7969 L2982.8438,349.7969 L2982.4375,348.7656 Z M2981.7188,347.0625 L2980.3594,343.6875 L2978.9844,347.0625 L2981.7188,347.0625 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="83" x="3000.75" y="351.9102">SQLConConfig</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2867" x2="3185" y1="363" y2="363"/><ellipse cx="2877" cy="374" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="72" x="2886" y="378.4189">type: SQLType</text><ellipse cx="2877" cy="387.8359" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="60" x="2886" y="392.2549">name: String</text><ellipse cx="2877" cy="401.6719" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="46" x="2886" y="406.0908">url: String</text><ellipse cx="2877" cy="415.5078" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="53" x="2886" y="419.9268">port: String</text><ellipse cx="2877" cy="429.3438" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="2886" y="433.7627">user: String</text><ellipse cx="2877" cy="443.1797" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="84" x="2886" y="447.5986">password: String</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2867" x2="3185" y1="454.0156" y2="454.0156"/><ellipse cx="2877" cy="465.0156" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="294" x="2886" y="469.4346">SQLConConfig(SQLType, String, String, String, String, String)</text><!--MD5=[5572ccbcee43be398db60b3a26f55152]
+class SQLConConfigWithDbName--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="75.6719" id="SQLConConfigWithDbName" style="stroke: #A80036; stroke-width: 1.5;" width="415" x="2818.5" y="543"/><ellipse cx="2942.75" cy="559" fill="#A9DCDF" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M2944.9375,560.7656 L2940.7969,560.7656 L2940.375,561.7969 L2940.7969,561.7969 Q2941.4063,561.7969 2941.6719,562.0313 Q2941.9375,562.2656 2941.9375,562.6563 Q2941.9375,563.0313 2941.6719,563.2656 Q2941.4063,563.5 2940.7969,563.5 L2938.5,563.5 Q2937.8906,563.5 2937.6406,563.2656 Q2937.375,563.0313 2937.375,562.6406 Q2937.375,562.2656 2937.6563,562.0313 Q2937.9219,561.7813 2938.5469,561.7969 L2941.2188,555.1406 L2940.1094,555.1406 Q2939.5,555.1406 2939.2344,554.9063 Q2938.9688,554.6719 2938.9688,554.2813 Q2938.9688,553.9063 2939.2344,553.6719 Q2939.5,553.4375 2940.1094,553.4375 L2943.7813,553.4375 L2947.1719,561.7969 Q2947.7656,561.7969 2947.9531,561.9375 Q2948.3438,562.2031 2948.3438,562.6563 Q2948.3438,563.0313 2948.0781,563.2656 Q2947.8281,563.5 2947.2188,563.5 L2944.9219,563.5 Q2944.3125,563.5 2944.0469,563.2656 Q2943.7813,563.0313 2943.7813,562.6406 Q2943.7813,562.2656 2944.0469,562.0313 Q2944.3125,561.7969 2944.9219,561.7969 L2945.3438,561.7969 L2944.9375,560.7656 Z M2944.2188,559.0625 L2942.8594,555.6875 L2941.4844,559.0625 L2944.2188,559.0625 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="158" x="2963.25" y="563.9102">SQLConConfigWithDbName</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2819.5" x2="3232.5" y1="575" y2="575"/><ellipse cx="2829.5" cy="586" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="97" x="2838.5" y="590.4189">initialDbName: String</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2819.5" x2="3232.5" y1="596.8359" y2="596.8359"/><ellipse cx="2829.5" cy="607.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="389" x="2838.5" y="612.2549">SQLConConfigWithDbName(SQLType, String, String, String, String, String, String)</text><!--MD5=[c5ee6a190594a35dcdf1b401cfc7e9ca]
+class SparkSQLConConfig--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="61.8359" id="SparkSQLConConfig" style="stroke: #A80036; stroke-width: 1.5;" width="338" x="2678" y="803.5"/><ellipse cx="2785.25" cy="819.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M2788.0156,815.375 Q2788.1719,815.1563 2788.3594,815.0469 Q2788.5469,814.9375 2788.7656,814.9375 Q2789.1406,814.9375 2789.375,815.2031 Q2789.6094,815.4531 2789.6094,816.0625 L2789.6094,817.5156 Q2789.6094,818.125 2789.375,818.3906 Q2789.1406,818.6563 2788.7656,818.6563 Q2788.4219,818.6563 2788.2188,818.4531 Q2788.0156,818.2656 2787.9063,817.75 Q2787.8594,817.3906 2787.6719,817.2031 Q2787.3438,816.8281 2786.7344,816.6094 Q2786.125,816.3906 2785.5,816.3906 Q2784.7344,816.3906 2784.0938,816.7188 Q2783.4688,817.0469 2782.9688,817.7969 Q2782.4844,818.5469 2782.4844,819.5781 L2782.4844,820.6719 Q2782.4844,821.9063 2783.375,822.7344 Q2784.2656,823.5469 2785.8594,823.5469 Q2786.7969,823.5469 2787.4531,823.2969 Q2787.8438,823.1406 2788.2656,822.7031 Q2788.5313,822.4375 2788.6719,822.3594 Q2788.8281,822.2813 2789.0313,822.2813 Q2789.3594,822.2813 2789.6094,822.5469 Q2789.875,822.7969 2789.875,823.1406 Q2789.875,823.4844 2789.5313,823.8906 Q2789.0313,824.4688 2788.2344,824.7969 Q2787.1563,825.25 2785.8594,825.25 Q2784.3438,825.25 2783.1406,824.625 Q2782.1563,824.125 2781.4688,823.0625 Q2780.7813,821.9844 2780.7813,820.7031 L2780.7813,819.5469 Q2780.7813,818.2188 2781.3906,817.0781 Q2782.0156,815.9219 2783.1094,815.3125 Q2784.2031,814.6875 2785.4375,814.6875 Q2786.1719,814.6875 2786.8125,814.8594 Q2787.4688,815.0156 2788.0156,815.375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="115" x="2805.75" y="824.4102">SparkSQLConConfig</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2679" x2="3015" y1="835.5" y2="835.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="2679" x2="3015" y1="843.5" y2="843.5"/><ellipse cx="2689" cy="854.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="312" x="2698" y="858.9189">SparkSQLConConfig(String, String, String, String, String, String) {</text><!--MD5=[eda72df494449552181ed9b7eecafaed]
+class MySQLConConfig--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="61.8359" id="MySQLConConfig" style="stroke: #A80036; stroke-width: 1.5;" width="324" x="3051" y="803.5"/><ellipse cx="3160.25" cy="819.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M3163.0156,815.375 Q3163.1719,815.1563 3163.3594,815.0469 Q3163.5469,814.9375 3163.7656,814.9375 Q3164.1406,814.9375 3164.375,815.2031 Q3164.6094,815.4531 3164.6094,816.0625 L3164.6094,817.5156 Q3164.6094,818.125 3164.375,818.3906 Q3164.1406,818.6563 3163.7656,818.6563 Q3163.4219,818.6563 3163.2188,818.4531 Q3163.0156,818.2656 3162.9063,817.75 Q3162.8594,817.3906 3162.6719,817.2031 Q3162.3438,816.8281 3161.7344,816.6094 Q3161.125,816.3906 3160.5,816.3906 Q3159.7344,816.3906 3159.0938,816.7188 Q3158.4688,817.0469 3157.9688,817.7969 Q3157.4844,818.5469 3157.4844,819.5781 L3157.4844,820.6719 Q3157.4844,821.9063 3158.375,822.7344 Q3159.2656,823.5469 3160.8594,823.5469 Q3161.7969,823.5469 3162.4531,823.2969 Q3162.8438,823.1406 3163.2656,822.7031 Q3163.5313,822.4375 3163.6719,822.3594 Q3163.8281,822.2813 3164.0313,822.2813 Q3164.3594,822.2813 3164.6094,822.5469 Q3164.875,822.7969 3164.875,823.1406 Q3164.875,823.4844 3164.5313,823.8906 Q3164.0313,824.4688 3163.2344,824.7969 Q3162.1563,825.25 3160.8594,825.25 Q3159.3438,825.25 3158.1406,824.625 Q3157.1563,824.125 3156.4688,823.0625 Q3155.7813,821.9844 3155.7813,820.7031 L3155.7813,819.5469 Q3155.7813,818.2188 3156.3906,817.0781 Q3157.0156,815.9219 3158.1094,815.3125 Q3159.2031,814.6875 3160.4375,814.6875 Q3161.1719,814.6875 3161.8125,814.8594 Q3162.4688,815.0156 3163.0156,815.375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="97" x="3180.75" y="824.4102">MySQLConConfig</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="3052" x2="3374" y1="835.5" y2="835.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="3052" x2="3374" y1="843.5" y2="843.5"/><ellipse cx="3062" cy="854.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="298" x="3071" y="858.9189">MySQLConConfig(String, String, String, String, String, String) {</text><!--MD5=[ea154724a3c94d4eb6409268ae4d31ed]
+class SQLConOutline--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="103.3438" id="SQLConOutline" style="stroke: #A80036; stroke-width: 1.5;" width="186" x="2436" y="352"/><ellipse cx="2481.75" cy="368" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M2484.5156,363.875 Q2484.6719,363.6563 2484.8594,363.5469 Q2485.0469,363.4375 2485.2656,363.4375 Q2485.6406,363.4375 2485.875,363.7031 Q2486.1094,363.9531 2486.1094,364.5625 L2486.1094,366.0156 Q2486.1094,366.625 2485.875,366.8906 Q2485.6406,367.1563 2485.2656,367.1563 Q2484.9219,367.1563 2484.7188,366.9531 Q2484.5156,366.7656 2484.4063,366.25 Q2484.3594,365.8906 2484.1719,365.7031 Q2483.8438,365.3281 2483.2344,365.1094 Q2482.625,364.8906 2482,364.8906 Q2481.2344,364.8906 2480.5938,365.2188 Q2479.9688,365.5469 2479.4688,366.2969 Q2478.9844,367.0469 2478.9844,368.0781 L2478.9844,369.1719 Q2478.9844,370.4063 2479.875,371.2344 Q2480.7656,372.0469 2482.3594,372.0469 Q2483.2969,372.0469 2483.9531,371.7969 Q2484.3438,371.6406 2484.7656,371.2031 Q2485.0313,370.9375 2485.1719,370.8594 Q2485.3281,370.7813 2485.5313,370.7813 Q2485.8594,370.7813 2486.1094,371.0469 Q2486.375,371.2969 2486.375,371.6406 Q2486.375,371.9844 2486.0313,372.3906 Q2485.5313,372.9688 2484.7344,373.2969 Q2483.6563,373.75 2482.3594,373.75 Q2480.8438,373.75 2479.6406,373.125 Q2478.6563,372.625 2477.9688,371.5625 Q2477.2813,370.4844 2477.2813,369.2031 L2477.2813,368.0469 Q2477.2813,366.7188 2477.8906,365.5781 Q2478.5156,364.4219 2479.6094,363.8125 Q2480.7031,363.1875 2481.9375,363.1875 Q2482.6719,363.1875 2483.3125,363.3594 Q2483.9688,363.5156 2484.5156,363.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="86" x="2502.25" y="372.9102">SQLConOutline</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2437" x2="2621" y1="384" y2="384"/><ellipse cx="2447" cy="395" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="126" x="2456" y="399.4189">conConfig: SQLConConfig</text><ellipse cx="2447" cy="408.8359" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="160" x="2456" y="413.2549">dbs: ArrayList&lt;DatabaseOutline&gt;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2437" x2="2621" y1="419.6719" y2="419.6719"/><ellipse cx="2447" cy="430.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="81" x="2456" y="435.0908">SQLConOutline()</text><ellipse cx="2447" cy="444.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="152" x="2456" y="448.9268">SQLConOutline(SQLConConfig)</text><!--MD5=[edd0a912bfe109c4932f2d9cbcc34509]
+class DatabaseOutline--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="75.6719" id="DatabaseOutline" style="stroke: #A80036; stroke-width: 1.5;" width="177" x="2442.5" y="543"/><ellipse cx="2480.9" cy="559" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M2483.6656,554.875 Q2483.8219,554.6563 2484.0094,554.5469 Q2484.1969,554.4375 2484.4156,554.4375 Q2484.7906,554.4375 2485.025,554.7031 Q2485.2594,554.9531 2485.2594,555.5625 L2485.2594,557.0156 Q2485.2594,557.625 2485.025,557.8906 Q2484.7906,558.1563 2484.4156,558.1563 Q2484.0719,558.1563 2483.8688,557.9531 Q2483.6656,557.7656 2483.5563,557.25 Q2483.5094,556.8906 2483.3219,556.7031 Q2482.9938,556.3281 2482.3844,556.1094 Q2481.775,555.8906 2481.15,555.8906 Q2480.3844,555.8906 2479.7438,556.2188 Q2479.1188,556.5469 2478.6188,557.2969 Q2478.1344,558.0469 2478.1344,559.0781 L2478.1344,560.1719 Q2478.1344,561.4063 2479.025,562.2344 Q2479.9156,563.0469 2481.5094,563.0469 Q2482.4469,563.0469 2483.1031,562.7969 Q2483.4938,562.6406 2483.9156,562.2031 Q2484.1813,561.9375 2484.3219,561.8594 Q2484.4781,561.7813 2484.6813,561.7813 Q2485.0094,561.7813 2485.2594,562.0469 Q2485.525,562.2969 2485.525,562.6406 Q2485.525,562.9844 2485.1813,563.3906 Q2484.6813,563.9688 2483.8844,564.2969 Q2482.8063,564.75 2481.5094,564.75 Q2479.9938,564.75 2478.7906,564.125 Q2477.8063,563.625 2477.1188,562.5625 Q2476.4313,561.4844 2476.4313,560.2031 L2476.4313,559.0469 Q2476.4313,557.7188 2477.0406,556.5781 Q2477.6656,555.4219 2478.7594,554.8125 Q2479.8531,554.1875 2481.0875,554.1875 Q2481.8219,554.1875 2482.4625,554.3594 Q2483.1188,554.5156 2483.6656,554.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="93" x="2500.1" y="563.9102">DatabaseOutline</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2443.5" x2="2618.5" y1="575" y2="575"/><ellipse cx="2453.5" cy="586" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="60" x="2462.5" y="590.4189">name: String</text><ellipse cx="2453.5" cy="599.8359" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="151" x="2462.5" y="604.2549">tables: ArrayList&lt;TableOutline&gt;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2443.5" x2="2618.5" y1="610.6719" y2="610.6719"/><!--MD5=[152c9bfe855f6849811715631baf5152]
+class TableOutline--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="75.6719" id="TableOutline" style="stroke: #A80036; stroke-width: 1.5;" width="121" x="2487.5" y="796.5"/><ellipse cx="2511.05" cy="812.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M2513.8156,808.375 Q2513.9719,808.1563 2514.1594,808.0469 Q2514.3469,807.9375 2514.5656,807.9375 Q2514.9406,807.9375 2515.175,808.2031 Q2515.4094,808.4531 2515.4094,809.0625 L2515.4094,810.5156 Q2515.4094,811.125 2515.175,811.3906 Q2514.9406,811.6563 2514.5656,811.6563 Q2514.2219,811.6563 2514.0188,811.4531 Q2513.8156,811.2656 2513.7063,810.75 Q2513.6594,810.3906 2513.4719,810.2031 Q2513.1438,809.8281 2512.5344,809.6094 Q2511.925,809.3906 2511.3,809.3906 Q2510.5344,809.3906 2509.8938,809.7188 Q2509.2688,810.0469 2508.7688,810.7969 Q2508.2844,811.5469 2508.2844,812.5781 L2508.2844,813.6719 Q2508.2844,814.9063 2509.175,815.7344 Q2510.0656,816.5469 2511.6594,816.5469 Q2512.5969,816.5469 2513.2531,816.2969 Q2513.6438,816.1406 2514.0656,815.7031 Q2514.3313,815.4375 2514.4719,815.3594 Q2514.6281,815.2813 2514.8313,815.2813 Q2515.1594,815.2813 2515.4094,815.5469 Q2515.675,815.7969 2515.675,816.1406 Q2515.675,816.4844 2515.3313,816.8906 Q2514.8313,817.4688 2514.0344,817.7969 Q2512.9563,818.25 2511.6594,818.25 Q2510.1438,818.25 2508.9406,817.625 Q2507.9563,817.125 2507.2688,816.0625 Q2506.5813,814.9844 2506.5813,813.7031 L2506.5813,812.5469 Q2506.5813,811.2188 2507.1906,810.0781 Q2507.8156,808.9219 2508.9094,808.3125 Q2510.0031,807.6875 2511.2375,807.6875 Q2511.9719,807.6875 2512.6125,807.8594 Q2513.2688,808.0156 2513.8156,808.375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="70" x="2526.95" y="817.4102">TableOutline</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2488.5" x2="2607.5" y1="828.5" y2="828.5"/><ellipse cx="2498.5" cy="839.5" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="60" x="2507.5" y="843.9189">name: String</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2488.5" x2="2607.5" y1="850.3359" y2="850.3359"/><ellipse cx="2498.5" cy="861.3359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="95" x="2507.5" y="865.7549">TableOutline(String)</text><!--MD5=[b5a3937ded97249b5067be952e2da28a]
+class SQLResult--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="75.6719" id="SQLResult" style="stroke: #A80036; stroke-width: 1.5;" width="195" x="2205.5" y="365.5"/><ellipse cx="2268.75" cy="381.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M2271.5156,377.375 Q2271.6719,377.1563 2271.8594,377.0469 Q2272.0469,376.9375 2272.2656,376.9375 Q2272.6406,376.9375 2272.875,377.2031 Q2273.1094,377.4531 2273.1094,378.0625 L2273.1094,379.5156 Q2273.1094,380.125 2272.875,380.3906 Q2272.6406,380.6563 2272.2656,380.6563 Q2271.9219,380.6563 2271.7188,380.4531 Q2271.5156,380.2656 2271.4063,379.75 Q2271.3594,379.3906 2271.1719,379.2031 Q2270.8438,378.8281 2270.2344,378.6094 Q2269.625,378.3906 2269,378.3906 Q2268.2344,378.3906 2267.5938,378.7188 Q2266.9688,379.0469 2266.4688,379.7969 Q2265.9844,380.5469 2265.9844,381.5781 L2265.9844,382.6719 Q2265.9844,383.9063 2266.875,384.7344 Q2267.7656,385.5469 2269.3594,385.5469 Q2270.2969,385.5469 2270.9531,385.2969 Q2271.3438,385.1406 2271.7656,384.7031 Q2272.0313,384.4375 2272.1719,384.3594 Q2272.3281,384.2813 2272.5313,384.2813 Q2272.8594,384.2813 2273.1094,384.5469 Q2273.375,384.7969 2273.375,385.1406 Q2273.375,385.4844 2273.0313,385.8906 Q2272.5313,386.4688 2271.7344,386.7969 Q2270.6563,387.25 2269.3594,387.25 Q2267.8438,387.25 2266.6406,386.625 Q2265.6563,386.125 2264.9688,385.0625 Q2264.2813,383.9844 2264.2813,382.7031 L2264.2813,381.5469 Q2264.2813,380.2188 2264.8906,379.0781 Q2265.5156,377.9219 2266.6094,377.3125 Q2267.7031,376.6875 2268.9375,376.6875 Q2269.6719,376.6875 2270.3125,376.8594 Q2270.9688,377.0156 2271.5156,377.375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="60" x="2289.25" y="386.4102">SQLResult</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2206.5" x2="2399.5" y1="397.5" y2="397.5"/><ellipse cx="2216.5" cy="408.5" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="52" x="2225.5" y="412.9189">info: String</text><ellipse cx="2216.5" cy="422.3359" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="169" x="2225.5" y="426.7549">tables: ArrayList&lt;SQLResultTable&gt;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2206.5" x2="2399.5" y1="433.1719" y2="433.1719"/><!--MD5=[7d05c9989097d960634fbe4d6e94252b]
+class SQLResultTable--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="117.1797" id="SQLResultTable" style="stroke: #A80036; stroke-width: 1.5;" width="247" x="2205.5" y="776"/><ellipse cx="2279.25" cy="792" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M2282.0156,787.875 Q2282.1719,787.6563 2282.3594,787.5469 Q2282.5469,787.4375 2282.7656,787.4375 Q2283.1406,787.4375 2283.375,787.7031 Q2283.6094,787.9531 2283.6094,788.5625 L2283.6094,790.0156 Q2283.6094,790.625 2283.375,790.8906 Q2283.1406,791.1563 2282.7656,791.1563 Q2282.4219,791.1563 2282.2188,790.9531 Q2282.0156,790.7656 2281.9063,790.25 Q2281.8594,789.8906 2281.6719,789.7031 Q2281.3438,789.3281 2280.7344,789.1094 Q2280.125,788.8906 2279.5,788.8906 Q2278.7344,788.8906 2278.0938,789.2188 Q2277.4688,789.5469 2276.9688,790.2969 Q2276.4844,791.0469 2276.4844,792.0781 L2276.4844,793.1719 Q2276.4844,794.4063 2277.375,795.2344 Q2278.2656,796.0469 2279.8594,796.0469 Q2280.7969,796.0469 2281.4531,795.7969 Q2281.8438,795.6406 2282.2656,795.2031 Q2282.5313,794.9375 2282.6719,794.8594 Q2282.8281,794.7813 2283.0313,794.7813 Q2283.3594,794.7813 2283.6094,795.0469 Q2283.875,795.2969 2283.875,795.6406 Q2283.875,795.9844 2283.5313,796.3906 Q2283.0313,796.9688 2282.2344,797.2969 Q2281.1563,797.75 2279.8594,797.75 Q2278.3438,797.75 2277.1406,797.125 Q2276.1563,796.625 2275.4688,795.5625 Q2274.7813,794.4844 2274.7813,793.2031 L2274.7813,792.0469 Q2274.7813,790.7188 2275.3906,789.5781 Q2276.0156,788.4219 2277.1094,787.8125 Q2278.2031,787.1875 2279.4375,787.1875 Q2280.1719,787.1875 2280.8125,787.3594 Q2281.4688,787.5156 2282.0156,787.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="91" x="2299.75" y="796.9102">SQLResultTable</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2206.5" x2="2451.5" y1="808" y2="808"/><ellipse cx="2216.5" cy="819" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="63" x="2225.5" y="823.4189">name: String;</text><ellipse cx="2216.5" cy="832.8359" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="131" x="2225.5" y="837.2549">columns: ArrayList&lt;String&gt;</text><ellipse cx="2216.5" cy="846.6719" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="221" x="2225.5" y="851.0908">content: ObservableList&lt;Map&lt;String, String&gt;&gt;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="2206.5" x2="2451.5" y1="857.5078" y2="857.5078"/><ellipse cx="2216.5" cy="868.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="85" x="2225.5" y="872.9268">SQLResultTable()</text><ellipse cx="2216.5" cy="882.3438" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="113" x="2225.5" y="886.7627">SQLResultTable(String)</text><!--MD5=[59222aec13168d290419b5a825e47c23]
+class SQLService--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="89.5078" id="SQLService" style="stroke: #A80036; stroke-width: 1.5;" width="181" x="1699.5" y="536"/><ellipse cx="1753.25" cy="552" fill="#A9DCDF" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1755.4375,553.7656 L1751.2969,553.7656 L1750.875,554.7969 L1751.2969,554.7969 Q1751.9063,554.7969 1752.1719,555.0313 Q1752.4375,555.2656 1752.4375,555.6563 Q1752.4375,556.0313 1752.1719,556.2656 Q1751.9063,556.5 1751.2969,556.5 L1749,556.5 Q1748.3906,556.5 1748.1406,556.2656 Q1747.875,556.0313 1747.875,555.6406 Q1747.875,555.2656 1748.1563,555.0313 Q1748.4219,554.7813 1749.0469,554.7969 L1751.7188,548.1406 L1750.6094,548.1406 Q1750,548.1406 1749.7344,547.9063 Q1749.4688,547.6719 1749.4688,547.2813 Q1749.4688,546.9063 1749.7344,546.6719 Q1750,546.4375 1750.6094,546.4375 L1754.2813,546.4375 L1757.6719,554.7969 Q1758.2656,554.7969 1758.4531,554.9375 Q1758.8438,555.2031 1758.8438,555.6563 Q1758.8438,556.0313 1758.5781,556.2656 Q1758.3281,556.5 1757.7188,556.5 L1755.4219,556.5 Q1754.8125,556.5 1754.5469,556.2656 Q1754.2813,556.0313 1754.2813,555.6406 Q1754.2813,555.2656 1754.5469,555.0313 Q1754.8125,554.7969 1755.4219,554.7969 L1755.8438,554.7969 L1755.4375,553.7656 Z M1754.7188,552.0625 L1753.3594,548.6875 L1751.9844,552.0625 L1754.7188,552.0625 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="65" x="1773.75" y="556.9102">SQLService</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1700.5" x2="1879.5" y1="568" y2="568"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="1700.5" x2="1879.5" y1="576" y2="576"/><ellipse cx="1710.5" cy="587" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="94" x="1719.5" y="591.4189">SQLService(String)</text><ellipse cx="1710.5" cy="600.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="99" x="1719.5" y="605.2549">getConURL(): String</text><ellipse cx="1710.5" cy="614.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="155" x="1719.5" y="619.0908">getSQLConConfig(): ConConfig</text><!--MD5=[9724e8115b5daa9b09ea5ed9a0ab6f04]
+class MySQLService--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="89.5078" id="MySQLService" style="stroke: #A80036; stroke-width: 1.5;" width="211" x="1937.5" y="358.5"/><ellipse cx="1999.75" cy="374.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M2002.5156,370.375 Q2002.6719,370.1563 2002.8594,370.0469 Q2003.0469,369.9375 2003.2656,369.9375 Q2003.6406,369.9375 2003.875,370.2031 Q2004.1094,370.4531 2004.1094,371.0625 L2004.1094,372.5156 Q2004.1094,373.125 2003.875,373.3906 Q2003.6406,373.6563 2003.2656,373.6563 Q2002.9219,373.6563 2002.7188,373.4531 Q2002.5156,373.2656 2002.4063,372.75 Q2002.3594,372.3906 2002.1719,372.2031 Q2001.8438,371.8281 2001.2344,371.6094 Q2000.625,371.3906 2000,371.3906 Q1999.2344,371.3906 1998.5938,371.7188 Q1997.9688,372.0469 1997.4688,372.7969 Q1996.9844,373.5469 1996.9844,374.5781 L1996.9844,375.6719 Q1996.9844,376.9063 1997.875,377.7344 Q1998.7656,378.5469 2000.3594,378.5469 Q2001.2969,378.5469 2001.9531,378.2969 Q2002.3438,378.1406 2002.7656,377.7031 Q2003.0313,377.4375 2003.1719,377.3594 Q2003.3281,377.2813 2003.5313,377.2813 Q2003.8594,377.2813 2004.1094,377.5469 Q2004.375,377.7969 2004.375,378.1406 Q2004.375,378.4844 2004.0313,378.8906 Q2003.5313,379.4688 2002.7344,379.7969 Q2001.6563,380.25 2000.3594,380.25 Q1998.8438,380.25 1997.6406,379.625 Q1996.6563,379.125 1995.9688,378.0625 Q1995.2813,376.9844 1995.2813,375.7031 L1995.2813,374.5469 Q1995.2813,373.2188 1995.8906,372.0781 Q1996.5156,370.9219 1997.6094,370.3125 Q1998.7031,369.6875 1999.9375,369.6875 Q2000.6719,369.6875 2001.3125,369.8594 Q2001.9688,370.0156 2002.5156,370.375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="78" x="2020.25" y="379.4102">MySQLService</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1938.5" x2="2147.5" y1="390.5" y2="390.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="1938.5" x2="2147.5" y1="398.5" y2="398.5"/><ellipse cx="1948.5" cy="409.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="80" x="1957.5" y="413.9189">MySQLService()</text><ellipse cx="1948.5" cy="423.3359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="96" x="1957.5" y="427.7549">getConURL(): String</text><ellipse cx="1948.5" cy="437.1719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="185" x="1957.5" y="441.5908">getSQLConConfig(): MySQLConConfig</text><!--MD5=[00f495d94c436abff17e7226e1f50db1]
+class SparkSQLService--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="89.5078" id="SparkSQLService" style="stroke: #A80036; stroke-width: 1.5;" width="225" x="1677.5" y="358.5"/><ellipse cx="1737.75" cy="374.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1740.5156,370.375 Q1740.6719,370.1563 1740.8594,370.0469 Q1741.0469,369.9375 1741.2656,369.9375 Q1741.6406,369.9375 1741.875,370.2031 Q1742.1094,370.4531 1742.1094,371.0625 L1742.1094,372.5156 Q1742.1094,373.125 1741.875,373.3906 Q1741.6406,373.6563 1741.2656,373.6563 Q1740.9219,373.6563 1740.7188,373.4531 Q1740.5156,373.2656 1740.4063,372.75 Q1740.3594,372.3906 1740.1719,372.2031 Q1739.8438,371.8281 1739.2344,371.6094 Q1738.625,371.3906 1738,371.3906 Q1737.2344,371.3906 1736.5938,371.7188 Q1735.9688,372.0469 1735.4688,372.7969 Q1734.9844,373.5469 1734.9844,374.5781 L1734.9844,375.6719 Q1734.9844,376.9063 1735.875,377.7344 Q1736.7656,378.5469 1738.3594,378.5469 Q1739.2969,378.5469 1739.9531,378.2969 Q1740.3438,378.1406 1740.7656,377.7031 Q1741.0313,377.4375 1741.1719,377.3594 Q1741.3281,377.2813 1741.5313,377.2813 Q1741.8594,377.2813 1742.1094,377.5469 Q1742.375,377.7969 1742.375,378.1406 Q1742.375,378.4844 1742.0313,378.8906 Q1741.5313,379.4688 1740.7344,379.7969 Q1739.6563,380.25 1738.3594,380.25 Q1736.8438,380.25 1735.6406,379.625 Q1734.6563,379.125 1733.9688,378.0625 Q1733.2813,376.9844 1733.2813,375.7031 L1733.2813,374.5469 Q1733.2813,373.2188 1733.8906,372.0781 Q1734.5156,370.9219 1735.6094,370.3125 Q1736.7031,369.6875 1737.9375,369.6875 Q1738.6719,369.6875 1739.3125,369.8594 Q1739.9688,370.0156 1740.5156,370.375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="96" x="1758.25" y="379.4102">SparkSQLService</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1678.5" x2="1901.5" y1="390.5" y2="390.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="1678.5" x2="1901.5" y1="398.5" y2="398.5"/><ellipse cx="1688.5" cy="409.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="94" x="1697.5" y="413.9189">SparkSQLService()</text><ellipse cx="1688.5" cy="423.3359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="96" x="1697.5" y="427.7549">getConURL(): String</text><ellipse cx="1688.5" cy="437.1719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="199" x="1697.5" y="441.5908">getSQLConConfig(): SparkSQLConConfig</text><!--MD5=[b24ed8d4ae84bae9290d9aab401637c7]
+class Manager--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="61.8359" id="Manager" style="stroke: #A80036; stroke-width: 1.5;" width="247" x="1148.5" y="550"/><ellipse cx="1243.75" cy="566" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1246.5156,561.875 Q1246.6719,561.6563 1246.8594,561.5469 Q1247.0469,561.4375 1247.2656,561.4375 Q1247.6406,561.4375 1247.875,561.7031 Q1248.1094,561.9531 1248.1094,562.5625 L1248.1094,564.0156 Q1248.1094,564.625 1247.875,564.8906 Q1247.6406,565.1563 1247.2656,565.1563 Q1246.9219,565.1563 1246.7188,564.9531 Q1246.5156,564.7656 1246.4063,564.25 Q1246.3594,563.8906 1246.1719,563.7031 Q1245.8438,563.3281 1245.2344,563.1094 Q1244.625,562.8906 1244,562.8906 Q1243.2344,562.8906 1242.5938,563.2188 Q1241.9688,563.5469 1241.4688,564.2969 Q1240.9844,565.0469 1240.9844,566.0781 L1240.9844,567.1719 Q1240.9844,568.4063 1241.875,569.2344 Q1242.7656,570.0469 1244.3594,570.0469 Q1245.2969,570.0469 1245.9531,569.7969 Q1246.3438,569.6406 1246.7656,569.2031 Q1247.0313,568.9375 1247.1719,568.8594 Q1247.3281,568.7813 1247.5313,568.7813 Q1247.8594,568.7813 1248.1094,569.0469 Q1248.375,569.2969 1248.375,569.6406 Q1248.375,569.9844 1248.0313,570.3906 Q1247.5313,570.9688 1246.7344,571.2969 Q1245.6563,571.75 1244.3594,571.75 Q1242.8438,571.75 1241.6406,571.125 Q1240.6563,570.625 1239.9688,569.5625 Q1239.2813,568.4844 1239.2813,567.2031 L1239.2813,566.0469 Q1239.2813,564.7188 1239.8906,563.5781 Q1240.5156,562.4219 1241.6094,561.8125 Q1242.7031,561.1875 1243.9375,561.1875 Q1244.6719,561.1875 1245.3125,561.3594 Q1245.9688,561.5156 1246.5156,561.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="1264.25" y="570.9102">Manager</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1149.5" x2="1394.5" y1="582" y2="582"/><ellipse cx="1159.5" cy="593" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="221" x="1168.5" y="597.4189">name2Controller: HashMap&lt;String, Controller&gt;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1149.5" x2="1394.5" y1="603.8359" y2="603.8359"/><!--MD5=[1d7ba1c7002d54515419844fbd155368]
+class Controller--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="75.6719" id="Controller" style="stroke: #A80036; stroke-width: 1.5;" width="87" x="860.5" y="543"/><ellipse cx="875.95" cy="559" fill="#A9DCDF" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M878.1375,560.7656 L873.9969,560.7656 L873.575,561.7969 L873.9969,561.7969 Q874.6063,561.7969 874.8719,562.0313 Q875.1375,562.2656 875.1375,562.6563 Q875.1375,563.0313 874.8719,563.2656 Q874.6063,563.5 873.9969,563.5 L871.7,563.5 Q871.0906,563.5 870.8406,563.2656 Q870.575,563.0313 870.575,562.6406 Q870.575,562.2656 870.8563,562.0313 Q871.1219,561.7813 871.7469,561.7969 L874.4188,555.1406 L873.3094,555.1406 Q872.7,555.1406 872.4344,554.9063 Q872.1688,554.6719 872.1688,554.2813 Q872.1688,553.9063 872.4344,553.6719 Q872.7,553.4375 873.3094,553.4375 L876.9813,553.4375 L880.3719,561.7969 Q880.9656,561.7969 881.1531,561.9375 Q881.5438,562.2031 881.5438,562.6563 Q881.5438,563.0313 881.2781,563.2656 Q881.0281,563.5 880.4188,563.5 L878.1219,563.5 Q877.5125,563.5 877.2469,563.2656 Q876.9813,563.0313 876.9813,562.6406 Q876.9813,562.2656 877.2469,562.0313 Q877.5125,561.7969 878.1219,561.7969 L878.5438,561.7969 L878.1375,560.7656 Z M877.4188,559.0625 L876.0594,555.6875 L874.6844,559.0625 L877.4188,559.0625 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="54" x="890.05" y="563.9102">Controller</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="861.5" x2="946.5" y1="575" y2="575"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="861.5" x2="946.5" y1="583" y2="583"/><ellipse cx="871.5" cy="594" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="59" x="880.5" y="598.4189">show(): void</text><ellipse cx="871.5" cy="607.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="61" x="880.5" y="612.2549">close(): void</text><!--MD5=[3b679f1b138a2b145c360b2fcb312f9b]
+class StartedControl--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="297.0469" id="StartedControl" style="stroke: #A80036; stroke-width: 1.5;" width="261" x="690.5" y="686"/><ellipse cx="777.25" cy="702" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M780.0156,697.875 Q780.1719,697.6563 780.3594,697.5469 Q780.5469,697.4375 780.7656,697.4375 Q781.1406,697.4375 781.375,697.7031 Q781.6094,697.9531 781.6094,698.5625 L781.6094,700.0156 Q781.6094,700.625 781.375,700.8906 Q781.1406,701.1563 780.7656,701.1563 Q780.4219,701.1563 780.2188,700.9531 Q780.0156,700.7656 779.9063,700.25 Q779.8594,699.8906 779.6719,699.7031 Q779.3438,699.3281 778.7344,699.1094 Q778.125,698.8906 777.5,698.8906 Q776.7344,698.8906 776.0938,699.2188 Q775.4688,699.5469 774.9688,700.2969 Q774.4844,701.0469 774.4844,702.0781 L774.4844,703.1719 Q774.4844,704.4063 775.375,705.2344 Q776.2656,706.0469 777.8594,706.0469 Q778.7969,706.0469 779.4531,705.7969 Q779.8438,705.6406 780.2656,705.2031 Q780.5313,704.9375 780.6719,704.8594 Q780.8281,704.7813 781.0313,704.7813 Q781.3594,704.7813 781.6094,705.0469 Q781.875,705.2969 781.875,705.6406 Q781.875,705.9844 781.5313,706.3906 Q781.0313,706.9688 780.2344,707.2969 Q779.1563,707.75 777.8594,707.75 Q776.3438,707.75 775.1406,707.125 Q774.1563,706.625 773.4688,705.5625 Q772.7813,704.4844 772.7813,703.2031 L772.7813,702.0469 Q772.7813,700.7188 773.3906,699.5781 Q774.0156,698.4219 775.1094,697.8125 Q776.2031,697.1875 777.4375,697.1875 Q778.1719,697.1875 778.8125,697.3594 Q779.4688,697.5156 780.0156,697.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="79" x="797.75" y="706.9102">StartedControl</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="691.5" x2="950.5" y1="718" y2="718"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="698.5" y="726"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="83" x="710.5" y="733.4189">view: StartedWin</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="691.5" x2="950.5" y1="739.8359" y2="739.8359"/><ellipse cx="701.5" cy="750.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="130" x="710.5" y="755.2549">StartedControl(StartedWin)</text><ellipse cx="701.5" cy="764.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="146" x="710.5" y="769.0908">setStatusBarText(String): void</text><ellipse cx="701.5" cy="778.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="117" x="710.5" y="782.9268">removeCon(String): void</text><ellipse cx="701.5" cy="792.3438" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="165" x="710.5" y="796.7627">addNewCon(SQLConConfig): void</text><ellipse cx="701.5" cy="806.1797" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="62" x="710.5" y="810.5986">show(): void</text><ellipse cx="701.5" cy="820.0156" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="60" x="710.5" y="824.4346">close(): void</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="0" x="713.5" y="838.2705"/><polygon fill="#FFFF44" points="701.5,842.6875,705.5,846.6875,701.5,850.6875,697.5,846.6875" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="182" x="710.5" y="852.1064">lanuchConWin(String, SQLType): void</text><polygon fill="#FFFF44" points="701.5,856.5234,705.5,860.5234,701.5,864.5234,697.5,860.5234" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="73" x="710.5" y="865.9424">initMenu(): void</text><polygon fill="#FFFF44" points="701.5,870.3594,705.5,874.3594,701.5,878.3594,697.5,874.3594" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="98" x="710.5" y="879.7783">initControlBar(): void</text><polygon fill="#FFFF44" points="701.5,884.1953,705.5,888.1953,701.5,892.1953,697.5,888.1953" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="83" x="710.5" y="893.6143">initNavBar(): void</text><polygon fill="#FFFF44" points="701.5,898.0313,705.5,902.0313,701.5,906.0313,697.5,902.0313" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="216" x="710.5" y="907.4502">getSQLService(SQLConConfig): SQLService</text><polygon fill="#FFFF44" points="701.5,911.8672,705.5,915.8672,701.5,919.8672,697.5,915.8672" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="183" x="710.5" y="921.2861">addSQLConInfo(SQLConOutline): void</text><polygon fill="#FFFF44" points="701.5,925.7031,705.5,929.7031,701.5,933.7031,697.5,929.7031" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="235" x="710.5" y="935.1221">createSQLResultTableTab(SQLResultTable): Tab</text><polygon fill="#FFFF44" points="701.5,939.5391,705.5,943.5391,701.5,947.5391,697.5,943.5391" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="154" x="710.5" y="948.958">addSQLResult(SQLResult): void</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="0" x="713.5" y="962.7939"/><polygon fill="#4177AF" points="701.5,968.2109,697.5,974.2109,705.5,974.2109" style="stroke: #1963A0; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="214" x="710.5" y="976.6299">changeCurrentCon(SQLConConfig): boolean</text><!--MD5=[dda6d313b43685ddccb1c7cf801a7d5b]
+class SQLConControl--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="131.0156" id="SQLConControl" style="stroke: #A80036; stroke-width: 1.5;" width="203" x="995.5" y="769"/><ellipse cx="1049.25" cy="785" fill="#A9DCDF" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1051.4375,786.7656 L1047.2969,786.7656 L1046.875,787.7969 L1047.2969,787.7969 Q1047.9063,787.7969 1048.1719,788.0313 Q1048.4375,788.2656 1048.4375,788.6563 Q1048.4375,789.0313 1048.1719,789.2656 Q1047.9063,789.5 1047.2969,789.5 L1045,789.5 Q1044.3906,789.5 1044.1406,789.2656 Q1043.875,789.0313 1043.875,788.6406 Q1043.875,788.2656 1044.1563,788.0313 Q1044.4219,787.7813 1045.0469,787.7969 L1047.7188,781.1406 L1046.6094,781.1406 Q1046,781.1406 1045.7344,780.9063 Q1045.4688,780.6719 1045.4688,780.2813 Q1045.4688,779.9063 1045.7344,779.6719 Q1046,779.4375 1046.6094,779.4375 L1050.2813,779.4375 L1053.6719,787.7969 Q1054.2656,787.7969 1054.4531,787.9375 Q1054.8438,788.2031 1054.8438,788.6563 Q1054.8438,789.0313 1054.5781,789.2656 Q1054.3281,789.5 1053.7188,789.5 L1051.4219,789.5 Q1050.8125,789.5 1050.5469,789.2656 Q1050.2813,789.0313 1050.2813,788.6406 Q1050.2813,788.2656 1050.5469,788.0313 Q1050.8125,787.7969 1051.4219,787.7969 L1051.8438,787.7969 L1051.4375,786.7656 Z M1050.7188,785.0625 L1049.3594,781.6875 L1047.9844,785.0625 L1050.7188,785.0625 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="87" x="1069.75" y="789.9102">SQLConControl</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="996.5" x2="1197.5" y1="801" y2="801"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="1003.5" y="809"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="88" x="1015.5" y="816.4189">view: SQLConWin</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="996.5" x2="1197.5" y1="822.8359" y2="822.8359"/><ellipse cx="1006.5" cy="833.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="140" x="1015.5" y="838.2549">SQLConControl(SQLConWin)</text><ellipse cx="1006.5" cy="847.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="177" x="1015.5" y="852.0908">getSQLConConfig(): SQLConConfig</text><polygon fill="#FFFF44" points="1006.5,856.5078,1010.5,860.5078,1006.5,864.5078,1002.5,860.5078" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="98" x="1015.5" y="865.9268">initControlBar(): void</text><ellipse cx="1006.5" cy="875.3438" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="62" x="1015.5" y="879.7627">show(): void</text><ellipse cx="1006.5" cy="889.1797" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="60" x="1015.5" y="893.5986">close(): void</text><!--MD5=[71b8da230a5617ac0a79d0a1bbb2e186]
+class SparkSQLConControl--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="89.5078" id="SparkSQLConControl" style="stroke: #A80036; stroke-width: 1.5;" width="225" x="984.5" y="1043"/><ellipse cx="1033.25" cy="1059" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1036.0156,1054.875 Q1036.1719,1054.6563 1036.3594,1054.5469 Q1036.5469,1054.4375 1036.7656,1054.4375 Q1037.1406,1054.4375 1037.375,1054.7031 Q1037.6094,1054.9531 1037.6094,1055.5625 L1037.6094,1057.0156 Q1037.6094,1057.625 1037.375,1057.8906 Q1037.1406,1058.1563 1036.7656,1058.1563 Q1036.4219,1058.1563 1036.2188,1057.9531 Q1036.0156,1057.7656 1035.9063,1057.25 Q1035.8594,1056.8906 1035.6719,1056.7031 Q1035.3438,1056.3281 1034.7344,1056.1094 Q1034.125,1055.8906 1033.5,1055.8906 Q1032.7344,1055.8906 1032.0938,1056.2188 Q1031.4688,1056.5469 1030.9688,1057.2969 Q1030.4844,1058.0469 1030.4844,1059.0781 L1030.4844,1060.1719 Q1030.4844,1061.4063 1031.375,1062.2344 Q1032.2656,1063.0469 1033.8594,1063.0469 Q1034.7969,1063.0469 1035.4531,1062.7969 Q1035.8438,1062.6406 1036.2656,1062.2031 Q1036.5313,1061.9375 1036.6719,1061.8594 Q1036.8281,1061.7813 1037.0313,1061.7813 Q1037.3594,1061.7813 1037.6094,1062.0469 Q1037.875,1062.2969 1037.875,1062.6406 Q1037.875,1062.9844 1037.5313,1063.3906 Q1037.0313,1063.9688 1036.2344,1064.2969 Q1035.1563,1064.75 1033.8594,1064.75 Q1032.3438,1064.75 1031.1406,1064.125 Q1030.1563,1063.625 1029.4688,1062.5625 Q1028.7813,1061.4844 1028.7813,1060.2031 L1028.7813,1059.0469 Q1028.7813,1057.7188 1029.3906,1056.5781 Q1030.0156,1055.4219 1031.1094,1054.8125 Q1032.2031,1054.1875 1033.4375,1054.1875 Q1034.1719,1054.1875 1034.8125,1054.3594 Q1035.4688,1054.5156 1036.0156,1054.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="119" x="1053.75" y="1063.9102">SparkSQLConControl</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="985.5" x2="1208.5" y1="1075" y2="1075"/><ellipse cx="995.5" cy="1086" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="116" x="1004.5" y="1090.4189">view: SparkSQLConWin</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="985.5" x2="1208.5" y1="1096.8359" y2="1096.8359"/><ellipse cx="995.5" cy="1107.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="196" x="1004.5" y="1112.2549">SparkSQLConControl(SparkSQLConWin)</text><ellipse cx="995.5" cy="1121.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="199" x="1004.5" y="1126.0908">getSQLConConfig(): SparkSQLConConfig</text><!--MD5=[86da38cc0bf86fd6af49a67594966241]
+class MySQLConControl--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="89.5078" id="MySQLConControl" style="stroke: #A80036; stroke-width: 1.5;" width="211" x="1244.5" y="1043"/><ellipse cx="1295.25" cy="1059" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1298.0156,1054.875 Q1298.1719,1054.6563 1298.3594,1054.5469 Q1298.5469,1054.4375 1298.7656,1054.4375 Q1299.1406,1054.4375 1299.375,1054.7031 Q1299.6094,1054.9531 1299.6094,1055.5625 L1299.6094,1057.0156 Q1299.6094,1057.625 1299.375,1057.8906 Q1299.1406,1058.1563 1298.7656,1058.1563 Q1298.4219,1058.1563 1298.2188,1057.9531 Q1298.0156,1057.7656 1297.9063,1057.25 Q1297.8594,1056.8906 1297.6719,1056.7031 Q1297.3438,1056.3281 1296.7344,1056.1094 Q1296.125,1055.8906 1295.5,1055.8906 Q1294.7344,1055.8906 1294.0938,1056.2188 Q1293.4688,1056.5469 1292.9688,1057.2969 Q1292.4844,1058.0469 1292.4844,1059.0781 L1292.4844,1060.1719 Q1292.4844,1061.4063 1293.375,1062.2344 Q1294.2656,1063.0469 1295.8594,1063.0469 Q1296.7969,1063.0469 1297.4531,1062.7969 Q1297.8438,1062.6406 1298.2656,1062.2031 Q1298.5313,1061.9375 1298.6719,1061.8594 Q1298.8281,1061.7813 1299.0313,1061.7813 Q1299.3594,1061.7813 1299.6094,1062.0469 Q1299.875,1062.2969 1299.875,1062.6406 Q1299.875,1062.9844 1299.5313,1063.3906 Q1299.0313,1063.9688 1298.2344,1064.2969 Q1297.1563,1064.75 1295.8594,1064.75 Q1294.3438,1064.75 1293.1406,1064.125 Q1292.1563,1063.625 1291.4688,1062.5625 Q1290.7813,1061.4844 1290.7813,1060.2031 L1290.7813,1059.0469 Q1290.7813,1057.7188 1291.3906,1056.5781 Q1292.0156,1055.4219 1293.1094,1054.8125 Q1294.2031,1054.1875 1295.4375,1054.1875 Q1296.1719,1054.1875 1296.8125,1054.3594 Q1297.4688,1054.5156 1298.0156,1054.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="101" x="1315.75" y="1063.9102">MySQLConControl</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1245.5" x2="1454.5" y1="1075" y2="1075"/><ellipse cx="1255.5" cy="1086" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="102" x="1264.5" y="1090.4189">view: MySQLConWin</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="1245.5" x2="1454.5" y1="1096.8359" y2="1096.8359"/><ellipse cx="1255.5" cy="1107.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="168" x="1264.5" y="1112.2549">MySQLConControl(MySQLConWin)</text><ellipse cx="1255.5" cy="1121.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="185" x="1264.5" y="1126.0908">getSQLConConfig(): MySQLConConfig</text><!--MD5=[0b4e4b4980470ea387cc45de9bd14b5b]
+class Application--><rect fill="#FEFECE" filter="url(#flmm9g5209uur)" height="48" id="Application" style="stroke: #A80036; stroke-width: 1.5;" width="92" x="22" y="101.5"/><ellipse cx="37" cy="117.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M39.7656,113.375 Q39.9219,113.1563 40.1094,113.0469 Q40.2969,112.9375 40.5156,112.9375 Q40.8906,112.9375 41.125,113.2031 Q41.3594,113.4531 41.3594,114.0625 L41.3594,115.5156 Q41.3594,116.125 41.125,116.3906 Q40.8906,116.6563 40.5156,116.6563 Q40.1719,116.6563 39.9688,116.4531 Q39.7656,116.2656 39.6563,115.75 Q39.6094,115.3906 39.4219,115.2031 Q39.0938,114.8281 38.4844,114.6094 Q37.875,114.3906 37.25,114.3906 Q36.4844,114.3906 35.8438,114.7188 Q35.2188,115.0469 34.7188,115.7969 Q34.2344,116.5469 34.2344,117.5781 L34.2344,118.6719 Q34.2344,119.9063 35.125,120.7344 Q36.0156,121.5469 37.6094,121.5469 Q38.5469,121.5469 39.2031,121.2969 Q39.5938,121.1406 40.0156,120.7031 Q40.2813,120.4375 40.4219,120.3594 Q40.5781,120.2813 40.7813,120.2813 Q41.1094,120.2813 41.3594,120.5469 Q41.625,120.7969 41.625,121.1406 Q41.625,121.4844 41.2813,121.8906 Q40.7813,122.4688 39.9844,122.7969 Q38.9063,123.25 37.6094,123.25 Q36.0938,123.25 34.8906,122.625 Q33.9063,122.125 33.2188,121.0625 Q32.5313,119.9844 32.5313,118.7031 L32.5313,117.5469 Q32.5313,116.2188 33.1406,115.0781 Q33.7656,113.9219 34.8594,113.3125 Q35.9531,112.6875 37.1875,112.6875 Q37.9219,112.6875 38.5625,112.8594 Q39.2188,113.0156 39.7656,113.375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="60" x="51" y="122.4102">Application</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="23" x2="113" y1="133.5" y2="133.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="23" x2="113" y1="141.5" y2="141.5"/><!--MD5=[3ef0595a9d459cb16efd8f7d8131728f]
+reverse link Application to Main--><path d="M68,169.84 C68,229.05 68,333.139 68,379.315 " fill="none" id="Application&lt;-Main" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="61.0001,169.56,68,149.56,75.0001,169.56,61.0001,169.56" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[e64d769c5042f72c9e52c0af8cef0fba]
+reverse link Win to StartedWin--><path d="M513.828,210.366 C525.685,248.867 539.6,294.047 550.955,330.92 " fill="none" id="Win&lt;-StartedWin" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="507.125,212.384,507.929,191.21,520.505,208.263,507.125,212.384" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[f99eaa637b447ca4819e7b541dda106c]
+reverse link Win to SQLConWin--><path d="M462.165,210.387 C445.239,265.348 424.121,333.918 412.24,372.496 " fill="none" id="Win&lt;-SQLConWin" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="455.495,208.263,468.071,191.21,468.875,212.384,455.495,208.263" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[725f0bbc3a4899cf60938e96dcb656a4]
+reverse link SQLConWin to SQLConWinWithDbName--><path d="M398.974,454.965 C396.524,485.683 393.476,523.891 391.399,549.931 " fill="none" id="SQLConWin&lt;-SQLConWinWithDbName" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="392.025,454.05,400.593,434.67,405.981,455.163,392.025,454.05" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[8f07e1e145f517052f00e8e263b5e4cb]
+reverse link SQLConWinWithDbName to SparkSQLConWin--><path d="M360.784,629.695 C350.407,647.344 338.603,667.545 328,686 C306.481,723.452 282.308,766.527 265.624,796.419 " fill="none" id="SQLConWinWithDbName&lt;-SparkSQLConWin" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="354.788,626.083,370.973,612.406,366.849,633.191,354.788,626.083" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[4569bc4c52f54a4288f7a288a742d1d3]
+reverse link SQLConWinWithDbName to MySQLConWin--><path d="M393.809,632.398 C398.424,680.751 405.285,752.652 409.431,796.104 " fill="none" id="SQLConWinWithDbName&lt;-MySQLConWin" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="386.827,632.911,391.895,612.337,400.763,631.581,386.827,632.911" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[cc4500e5cdada7c72124262ec49bb25d]
+reverse link SQLConConfig to SQLConConfigWithDbName--><path d="M3026,496.249 C3026,512.791 3026,529.143 3026,542.948 " fill="none" id="SQLConConfig&lt;-SQLConConfigWithDbName" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="3019,496.136,3026,476.136,3033,496.136,3019,496.136" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[2a1192341b1dd0bdda6b18b1af1d1d91]
+reverse link SQLConConfigWithDbName to SparkSQLConConfig--><path d="M2987.96,635.441 C2951.57,686.575 2897.98,761.873 2868.46,803.343 " fill="none" id="SQLConConfigWithDbName&lt;-SparkSQLConConfig" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="2982.29,631.345,2999.59,619.11,2993.69,639.463,2982.29,631.345" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[a3a86bb9296abadf77b632b44efaf032]
+reverse link SQLConConfigWithDbName to MySQLConConfig--><path d="M3065.74,635.441 C3103.76,686.575 3159.74,761.873 3190.58,803.343 " fill="none" id="SQLConConfigWithDbName&lt;-MySQLConConfig" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="3059.91,639.336,3053.59,619.11,3071.14,630.983,3059.91,639.336" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[5c5b2dbb8f0904cc8e5c444555b754aa]
+reverse link SQLConOutline to DatabaseOutline--><path d="M2529.73,468.406 C2530.01,493.382 2530.33,521.147 2530.58,542.734 " fill="none" id="SQLConOutline&lt;-DatabaseOutline" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="2529.58,455.262,2525.6488,461.3073,2529.7171,467.2612,2533.6483,461.2159,2529.58,455.262" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="2522.1876" y="476.7882">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="2525.0599" y="532.0485">*</text><!--MD5=[2419d7bcf3fd078e02d3cdf35433ed1e]
+reverse link DatabaseOutline to TableOutline--><path d="M2534.39,632.087 C2537.66,680.492 2542.54,752.707 2545.48,796.238 " fill="none" id="DatabaseOutline&lt;-TableOutline" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="2533.51,619.11,2529.9244,625.3665,2534.3205,631.0826,2537.9061,624.8261,2533.51,619.11" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="2526.346" y="640.2984">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="2539.5858" y="785.5532">*</text><!--MD5=[3061cfa982a314b6afde8f073981e267]
+reverse link SQLResult to SQLResultTable--><path d="M2306.06,454.947 C2310.92,535.14 2320.38,691.251 2325.5,775.782 " fill="none" id="SQLResult&lt;-SQLResultTable" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="2305.26,441.82,2301.6308,448.0513,2305.9869,453.798,2309.6161,447.5667,2305.26,441.82" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="2298.0624" y="462.7515">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="2319.7688" y="765.1563">*</text><!--MD5=[6bebd99f8c9352cb83e0f604c981f23a]
+reverse link MySQLService to SQLService--><path d="M1962.68,460.215 C1927.43,484.669 1886.63,512.971 1853.54,535.922 " fill="none" id="MySQLService&lt;-SQLService" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="1959.06,454.207,1979.48,448.56,1967.04,465.711,1959.06,454.207" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[55e8efd5abbaead03630c622292d946e]
+reverse link SparkSQLService to SQLService--><path d="M1790,468.826 C1790,491.063 1790,515.465 1790,535.728 " fill="none" id="SparkSQLService&lt;-SQLService" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="1783,468.786,1790,448.786,1797,468.786,1783,468.786" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[b87f5fafd5fce86e11e725b85f3ad616]
+reverse link Controller to StartedControl--><path d="M885.421,638.297 C880.632,652.809 875.249,669.12 869.688,685.968 " fill="none" id="Controller&lt;-StartedControl" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="878.838,635.908,891.753,619.11,892.132,640.296,878.838,635.908" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[01175ab1e65b55755e05e91c40bc2d4b]
+reverse link StartedWin to StartedControl--><path d="M617.047,480.694 C649.857,537.451 695.687,616.73 735.594,685.762 " fill="none" id="StartedWin&lt;-StartedControl" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="614.51,476.305,615.5523,486.0986,617.0128,480.6335,622.4779,482.094,614.51,476.305" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[2e6886e70b06d90399804de97a278835]
+reverse link SQLService to StartedControl--><path d="M1694.21,608.224 C1637.1,622.839 1562.9,640.047 1496,650 C1379.67,667.306 1075.02,637.232 968,686 C962.407,688.549 956.909,691.409 951.518,694.529 " fill="none" id="SQLService&lt;-StartedControl" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1699.34,606.908,1689.6282,605.2708,1694.4969,608.1509,1691.6168,613.0197,1699.34,606.908" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[c2f44b8b725fb3cef1bc5f615799997c]
+reverse link Controller to SQLConControl--><path d="M949.033,634.305 C962.761,650.655 977.727,668.894 991,686 C1011.68,712.658 1033.6,742.8 1052.1,768.856 " fill="none" id="Controller&lt;-SQLConControl" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="943.66,638.793,936.085,619.003,954.348,629.75,943.66,638.793" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[44efb230ab2bf15239b0c4059fea6d68]
+reverse link SQLConControl to SparkSQLConControl--><path d="M1097,920.393 C1097,961.391 1097,1008.888 1097,1042.654 " fill="none" id="SQLConControl&lt;-SparkSQLConControl" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="1090,920.268,1097,900.267,1104,920.267,1090,920.268" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[13daaf3f6e6e463813caac0d281f0352]
+reverse link SparkSQLConWin to SparkSQLConControl--><path d="M257.121,877.612 C269.27,911.789 291.504,958.227 328,983 C432.642,1054.028 797.42,1076.811 984.483,1083.911 " fill="none" id="SparkSQLConWin&lt;-SparkSQLConControl" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="255.401,872.662,254.5773,882.4764,257.0424,877.3849,262.1339,879.85,255.401,872.662" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[355236384861af45c6dfc0b41aef1121]
+reverse link SQLConControl to MySQLConControl--><path d="M1176.51,914.543 C1219.03,956.804 1269.79,1007.27 1305.39,1042.654 " fill="none" id="SQLConControl&lt;-MySQLConControl" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="1171.4,919.332,1162.15,900.267,1181.27,909.403,1171.4,919.332" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[909780b3ad6b667e0cc2a7f9309ccb44]
+reverse link MySQLConWin to MySQLConControl--><path d="M468.263,875.615 C519.075,910.265 597.856,958.505 674,983 C909.343,1058.707 986.056,987.649 1227,1043 C1232.75,1044.32 1238.6,1045.826 1244.47,1047.466 " fill="none" id="MySQLConWin&lt;-MySQLConControl" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="464.044,872.726,469.2111,881.1106,468.1699,875.5504,473.7301,874.5092,464.044,872.726" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[0a7316b48ace2656552505b7c2b54b3a]
+@startuml
+class Application
+
+package "application" {
+  Application <|- - Main
+}
+package "view" {
+  Win <|- - StartedWin
+  package "view.connect"{
+    Win <|- - SQLConWin
+    SQLConWin <|- - SQLConWinWithDbName
+    SQLConWinWithDbName <|- - SparkSQLConWin
+    SQLConWinWithDbName <|- - MySQLConWin
+  }
+}
+package "model" {
+  package "model.sql" {
+    enum SQLType
+    package "model.sql.connect" {
+      SQLConConfig <|- - SQLConConfigWithDbName
+      SQLConConfigWithDbName <|- - SparkSQLConConfig
+      SQLConConfigWithDbName <|- - MySQLConConfig
+    }
+    package "model.sql.query" {
+      SQLConOutline "1" *- - "*" DatabaseOutline
+      DatabaseOutline "1" *- - "*" TableOutline
+      SQLResult "1" *- - - "*" SQLResultTable
+    }
+    package "model.sql.services" {
+      class SQLService
+      MySQLService <|- - SQLService
+      SparkSQLService <|- - SQLService
+    }
+  }
+}
+
+package "control" {
+  class Manager
+  Controller <|- - StartedControl
+  StartedWin <- - StartedControl
+  SQLService <- - StartedControl
+  package "control.connect" {
+    Controller <|- - SQLConControl
+    SQLConControl <|- - SparkSQLConControl
+    SparkSQLConWin <- - SparkSQLConControl
+    SQLConControl <|- -MySQLConControl
+    MySQLConWin <- - MySQLConControl
+  }
+}
+
+/' view '/
+abstract class Win {
+  + name: String
+  + statge: Stage
+  + scene : Scene
+  
+  + Win(String)
+  + {abstract} show(): void
+  + close(): void
+}
+
+abstract class SQLConWin{
+  + SQLConWin(String)
+}
+
+abstract class SQLConWinWithDbName {
+  + SQLConWinWithDbName(String)
+}
+
+class SparkSQLConWin {
+  + SparkSQLConWin()
+  + show(): void
+}
+
+class MySQLConWin {
+  + MySQLConWin(String)
+  + show(): void
+}
+
+class StartedWin {
+  + StartedWin(String)
+  + show(): void
+  # initRoot(): void
+  # initMenu(): void
+  # initNavBar(): void
+  # initMainPar(): void
+  # initStatusBar(): void
+}
+
+/' controller '/
+abstract class Controller {
+  + {abstract} show(): void
+	+ {abstract} close(): void
+}
+
+abstract class SQLConControl {
+  - view: SQLConWin
+
+  + SQLConControl(SQLConWin)
+  + {abstract} getSQLConConfig(): SQLConConfig
+  # initControlBar(): void
+  + show(): void
+  + close(): void
+}
+
+class SparkSQLConControl {
+  + view: SparkSQLConWin
+
+  + SparkSQLConControl(SparkSQLConWin)
+  + getSQLConConfig(): SparkSQLConConfig
+}
+
+
+class MySQLConControl {
+  + view: MySQLConWin
+
+  + MySQLConControl(MySQLConWin)
+  + getSQLConConfig(): MySQLConConfig
+}
+
+class StartedControl {
+  - view: StartedWin
+
+  + StartedControl(StartedWin)
+  + setStatusBarText(String): void
+  + removeCon(String): void
+  + addNewCon(SQLConConfig): void
+  + show(): void
+  + close(): void
+
+  # lanuchConWin(String, SQLType): void
+  # initMenu(): void
+  # initControlBar(): void
+  # initNavBar(): void
+  # getSQLService(SQLConConfig): SQLService
+  # addSQLConInfo(SQLConOutline): void
+  # createSQLResultTableTab(SQLResultTable): Tab
+  # addSQLResult(SQLResult): void
+
+  ~changeCurrentCon(SQLConConfig): boolean
+}
+
+class Manager {
+  + {static} name2Controller: HashMap<String, Controller>
+}
+
+/' model '/
+enum SQLType {
+	SPARK
+	MYSQL
+}
+
+abstract class SQLConConfig {
+	+ type: SQLType
+	+ name: String
+	+ url: String 
+	+ port: String
+	+ user: String
+	+ password: String
+	+ SQLConConfig(SQLType, String, String, String, String, String)
+}
+
+abstract class SQLConConfigWithDbName{
+  + initialDbName: String
+	+ SQLConConfigWithDbName(SQLType, String, String, String, String, String, String)
+}
+
+class SparkSQLConConfig {
+	+ SparkSQLConConfig(String, String, String, String, String, String) {
+}
+
+class MySQLConConfig {
+	+ MySQLConConfig(String, String, String, String, String, String) {
+}
+
+class SQLConOutline {
+	+ conConfig: SQLConConfig
+	+ dbs: ArrayList<DatabaseOutline>
+
+	+ SQLConOutline()
+	+ SQLConOutline(SQLConConfig)
+}
+class DatabaseOutline {
+  + name: String
+	+ tables: ArrayList<TableOutline>
+}
+class TableOutline {
+	+ name: String
+	+ TableOutline(String)
+}
+class SQLResult {
+	+ info: String
+	+ tables: ArrayList<SQLResultTable>
+}
+class SQLResultTable {
+	+ name: String;
+	+ columns: ArrayList<String>
+	+ content: ObservableList<Map<String, String>>
+
+	+ SQLResultTable()
+	+ SQLResultTable(String)
+}
+
+
+abstract class SQLService {
+  + SQLService(String)
+  + {abstract} getConURL(): String
+  + {abstract} getSQLConConfig(): ConConfig
+}
+
+class MySQLService {
+  + MySQLService()
+  + getConURL(): String
+  + getSQLConConfig(): MySQLConConfig
+}
+
+class SparkSQLService {
+  + SparkSQLService()
+  + getConURL(): String
+  + getSQLConConfig(): SparkSQLConConfig
+}
+@enduml
+
+@startuml
+class Application
+
+package "application" {
+  Application <|- - Main
+}
+package "view" {
+  Win <|- - StartedWin
+  package "view.connect"{
+    Win <|- - SQLConWin
+    SQLConWin <|- - SQLConWinWithDbName
+    SQLConWinWithDbName <|- - SparkSQLConWin
+    SQLConWinWithDbName <|- - MySQLConWin
+  }
+}
+package "model" {
+  package "model.sql" {
+    enum SQLType
+    package "model.sql.connect" {
+      SQLConConfig <|- - SQLConConfigWithDbName
+      SQLConConfigWithDbName <|- - SparkSQLConConfig
+      SQLConConfigWithDbName <|- - MySQLConConfig
+    }
+    package "model.sql.query" {
+      SQLConOutline "1" *- - "*" DatabaseOutline
+      DatabaseOutline "1" *- - "*" TableOutline
+      SQLResult "1" *- - - "*" SQLResultTable
+    }
+    package "model.sql.services" {
+      class SQLService
+      MySQLService <|- - SQLService
+      SparkSQLService <|- - SQLService
+    }
+  }
+}
+
+package "control" {
+  class Manager
+  Controller <|- - StartedControl
+  StartedWin <- - StartedControl
+  SQLService <- - StartedControl
+  package "control.connect" {
+    Controller <|- - SQLConControl
+    SQLConControl <|- - SparkSQLConControl
+    SparkSQLConWin <- - SparkSQLConControl
+    SQLConControl <|- -MySQLConControl
+    MySQLConWin <- - MySQLConControl
+  }
+}
+
+abstract class Win {
+  + name: String
+  + statge: Stage
+  + scene : Scene
+  
+  + Win(String)
+  + {abstract} show(): void
+  + close(): void
+}
+
+abstract class SQLConWin{
+  + SQLConWin(String)
+}
+
+abstract class SQLConWinWithDbName {
+  + SQLConWinWithDbName(String)
+}
+
+class SparkSQLConWin {
+  + SparkSQLConWin()
+  + show(): void
+}
+
+class MySQLConWin {
+  + MySQLConWin(String)
+  + show(): void
+}
+
+class StartedWin {
+  + StartedWin(String)
+  + show(): void
+  # initRoot(): void
+  # initMenu(): void
+  # initNavBar(): void
+  # initMainPar(): void
+  # initStatusBar(): void
+}
+
+abstract class Controller {
+  + {abstract} show(): void
+	+ {abstract} close(): void
+}
+
+abstract class SQLConControl {
+  - view: SQLConWin
+
+  + SQLConControl(SQLConWin)
+  + {abstract} getSQLConConfig(): SQLConConfig
+  # initControlBar(): void
+  + show(): void
+  + close(): void
+}
+
+class SparkSQLConControl {
+  + view: SparkSQLConWin
+
+  + SparkSQLConControl(SparkSQLConWin)
+  + getSQLConConfig(): SparkSQLConConfig
+}
+
+
+class MySQLConControl {
+  + view: MySQLConWin
+
+  + MySQLConControl(MySQLConWin)
+  + getSQLConConfig(): MySQLConConfig
+}
+
+class StartedControl {
+  - view: StartedWin
+
+  + StartedControl(StartedWin)
+  + setStatusBarText(String): void
+  + removeCon(String): void
+  + addNewCon(SQLConConfig): void
+  + show(): void
+  + close(): void
+
+  # lanuchConWin(String, SQLType): void
+  # initMenu(): void
+  # initControlBar(): void
+  # initNavBar(): void
+  # getSQLService(SQLConConfig): SQLService
+  # addSQLConInfo(SQLConOutline): void
+  # createSQLResultTableTab(SQLResultTable): Tab
+  # addSQLResult(SQLResult): void
+
+  ~changeCurrentCon(SQLConConfig): boolean
+}
+
+class Manager {
+  + {static} name2Controller: HashMap<String, Controller>
+}
+
+enum SQLType {
+	SPARK
+	MYSQL
+}
+
+abstract class SQLConConfig {
+	+ type: SQLType
+	+ name: String
+	+ url: String 
+	+ port: String
+	+ user: String
+	+ password: String
+	+ SQLConConfig(SQLType, String, String, String, String, String)
+}
+
+abstract class SQLConConfigWithDbName{
+  + initialDbName: String
+	+ SQLConConfigWithDbName(SQLType, String, String, String, String, String, String)
+}
+
+class SparkSQLConConfig {
+	+ SparkSQLConConfig(String, String, String, String, String, String) {
+}
+
+class MySQLConConfig {
+	+ MySQLConConfig(String, String, String, String, String, String) {
+}
+
+class SQLConOutline {
+	+ conConfig: SQLConConfig
+	+ dbs: ArrayList<DatabaseOutline>
+
+	+ SQLConOutline()
+	+ SQLConOutline(SQLConConfig)
+}
+class DatabaseOutline {
+  + name: String
+	+ tables: ArrayList<TableOutline>
+}
+class TableOutline {
+	+ name: String
+	+ TableOutline(String)
+}
+class SQLResult {
+	+ info: String
+	+ tables: ArrayList<SQLResultTable>
+}
+class SQLResultTable {
+	+ name: String;
+	+ columns: ArrayList<String>
+	+ content: ObservableList<Map<String, String>>
+
+	+ SQLResultTable()
+	+ SQLResultTable(String)
+}
+
+
+abstract class SQLService {
+  + SQLService(String)
+  + {abstract} getConURL(): String
+  + {abstract} getSQLConConfig(): ConConfig
+}
+
+class MySQLService {
+  + MySQLService()
+  + getConURL(): String
+  + getSQLConConfig(): MySQLConConfig
+}
+
+class SparkSQLService {
+  + SparkSQLService()
+  + getConURL(): String
+  + getSQLConConfig(): SparkSQLConConfig
+}
+@enduml
+
+PlantUML version 1.2020.10(Sun May 17 17:35:57 CST 2020)
+(MIT source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_252-b09
+Operating System: Windows 10
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg></p><h1 class="mume-header" id="%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%AE%9E%E7%8E%B0">&#x67E5;&#x8BE2;&#x7684;&#x5B9E;&#x73B0;</h1>
+
+<p>&#x6D2A;&#x8001;&#x677F;&#x7684;&#x4EFB;&#x52A1;</p>
+<h1 class="mume-header" id="%E4%BD%A0%E4%BB%AC%E6%9C%89%E8%A1%A5%E5%85%85%E7%9A%84%E4%B9%9F%E4%B8%8A">&#x4F60;&#x4EEC;&#x6709;&#x8865;&#x5145;&#x7684;&#x4E5F;&#x4E0A;</h1>
+
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
