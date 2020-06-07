@@ -110,24 +110,24 @@ public abstract class SQLService {
 		// the operation index
 		int count = 0;
 		for (String query : sqlCode.split(";")) {
-			query = query.trim();//remove the space
+			query = query.trim().toLowerCase();//remove the space
 			if (query == null || query.length() == 0)
 				continue;
 			int type = getOperationType(query);
 			// there exists spelling mistake or
 			// the situation this program doesn's consider
 			if (type == 0) {
-				sb.append("Opertion " + (++count) + ": something wrong! Please check your statement(word spell).\n\n");
+				sb.append("Opertion " + (++count) + ": Something wrong! Please check your statement(word spell).\n\n");
 				continue;
 			}
 
-			// select, show
+			// select, show, describe
 			if (type == 1) {
 				SQLResultTable sqlResultTable = getRetrieveResult(query);
 				if (sqlResultTable == null) {
-					sb.append("Opertion " + (++count) + ": failed\n\n");
+					sb.append("Opertion " + (++count) + ": Failed\n\n");
 				} else {
-					sb.append("Opertion " + (++count) + ": successful\n\n");
+					sb.append("Opertion " + (++count) + ": Successful\n\n");
 					sqlResultTable.name = "Result " + (++cnt);
 					resultTables.add(sqlResultTable);
 				}
@@ -156,7 +156,7 @@ public abstract class SQLService {
 	protected int getOperationType(String query) {
 		//find the query statement's first word to judge what kind of operation it is
 		String kind = query.split(" ")[0];
-		if ("select".equals(kind) || "show".equals(kind))
+		if ("select".equals(kind) || "show".equals(kind)||"describe".equals(kind)||"desc".equals(kind))
 			return 1;
 		if ("insert".equals(kind) || "update".equals(kind) || "delete".equals(kind) || "alter".equals(kind))
 			return 2;
@@ -165,7 +165,7 @@ public abstract class SQLService {
 		return 0;
 	}
 
-	// select, show
+	// select, show, describe
 	protected SQLResultTable getRetrieveResult(String qurey) {
 
 		SQLResultTable sqlResultTable = new SQLResultTable();
@@ -221,7 +221,7 @@ public abstract class SQLService {
 				return new String("Failed!");
 		} catch (SQLException throwables) {
 			throwables.printStackTrace();
-			return new String("something wrong! Please check your statement or make sure you have right to do this operation.");
+			return new String("Something wrong! Please check your statement or make sure you have right to do this operation.");
 		}
 	}
 
