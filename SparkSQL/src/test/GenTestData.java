@@ -6,8 +6,8 @@ import java.util.Map;
 import java.util.Random;
 
 import javafx.collections.FXCollections;
-import model.sql.SQLType;
 import model.sql.connect.SQLConConfig;
+import model.sql.connect.SparkSQLConConfig;
 import model.sql.query.DatabaseOutline;
 import model.sql.query.SQLConOutline;
 import model.sql.query.SQLResult;
@@ -29,7 +29,7 @@ public class GenTestData {
 	     return sb.toString();
 	}
 	static public SQLConConfig genSQLConConfig() {
-		SQLConConfig ret = new SQLConConfig(SQLType.SPARK, genString(5), genString(5), genString(5), genString(5), genString(5));
+		SQLConConfig ret = new SparkSQLConConfig(genString(5), genString(5), genString(5), genString(5), genString(5), genString(5));
 		return ret;
 	}
 	static public TableOutline genTableOutline() {

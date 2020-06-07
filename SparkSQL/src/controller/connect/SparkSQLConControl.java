@@ -1,6 +1,5 @@
 package controller.connect;
 
-import model.sql.connect.SQLConConfig;
 import model.sql.connect.SparkSQLConConfig;
 import view.connect.SparkSQLConWin;
 
@@ -11,7 +10,7 @@ public class SparkSQLConControl extends SQLConControl{
 		this.view = view;
 		initControlBar();
 	}
-	protected SQLConConfig generateSQLConConfig() {
+	public SparkSQLConConfig getSQLConConfig() {
 		return new SparkSQLConConfig(view.conNameInput.getText(), view.urlInput.getText(), view.portInput.getText(), view.userInput.getText(), view.pwInput.getText(), view.initialDbNameInput.getText());
 	}
 }

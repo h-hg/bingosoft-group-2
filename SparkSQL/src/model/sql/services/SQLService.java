@@ -155,6 +155,8 @@ public abstract class SQLService {
 	//cause mysql and sparksql can deal with word like from, into and table name in upper case
 	//we can just care about first.
 	protected String changeFirstWordToLowerCase(String query){
+		if(query.indexOf(' ') == -1)
+			return query;
 		StringBuilder sb=new StringBuilder();
 		int i=0;
 		for(;i<query.length();i++){

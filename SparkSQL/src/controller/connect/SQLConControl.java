@@ -11,8 +11,8 @@ import view.connect.SQLConWin;
 public abstract class SQLConControl extends Controller {
 	private SQLConWin view = null;//It's important to set private, because it's inheritance has view, too.
 	
-	protected abstract SQLConConfig generateSQLConConfig();	
-	public void initControlBar() {
+	public abstract SQLConConfig getSQLConConfig();	
+	protected void initControlBar() {
 		view.cancelBtn.setOnAction(actionEvent -> view.close());
 		view.conBtn.setOnAction(actionEvent -> {
 			String name = view.conNameInput.getText();
@@ -25,7 +25,7 @@ public abstract class SQLConControl extends Controller {
 			}
 			StartedControl startedControl = (StartedControl)Manager.name2Controller.get("StartedWin");
 			close();
-			startedControl.addNewCon(generateSQLConConfig());
+			startedControl.addNewCon(getSQLConConfig());
 		});
 	}
 

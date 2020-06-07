@@ -1,6 +1,5 @@
 package model.sql.services;
 
-import model.sql.connect.SQLConConfig;
 import model.sql.connect.SparkSQLConConfig;
 
 public class SparkSQLService extends SQLService {
@@ -14,7 +13,7 @@ public class SparkSQLService extends SQLService {
 	public String getConURL() {
 		return "jdbc:hive2://" + config.url + ":" + config.port + "/" + config.initialDbName;
 	}
-	public SQLConConfig getSQLConConfig() {
+	public SparkSQLConConfig getSQLConConfig() {
 		return this.config;
 	}
 }

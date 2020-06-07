@@ -84,7 +84,7 @@ public class StartedControl extends Controller {
 		}
 		conControl.show();
 	}
-	private void initMenu() {
+	protected void initMenu() {
 		view.newSparkSQLConMenuItem.setOnAction(actionEvent -> {
 			lanuchConWin("SparkSQLConWin", SQLType.SPARK);
 		});
@@ -94,7 +94,7 @@ public class StartedControl extends Controller {
 		view.exitMenuItem.setOnAction(actionEvent -> Platform.exit());
 	}
 
-	private void initControlBar() {
+	protected void initControlBar() {
 		view.runBtn.setOnAction(actionEvent -> {
 			if (conService == null) {
 				return;
@@ -135,7 +135,7 @@ public class StartedControl extends Controller {
 		});
 	}
 
-	private void initNavBar() {
+	protected void initNavBar() {
 		// listen clicking even:
 		// https://stackoverflow.com/questions/27894108/how-do-i-make-a-mouse-click-event-be-acknowledged-by-a-treeitem-in-a-treeview
 
@@ -165,7 +165,7 @@ public class StartedControl extends Controller {
 		});
 	}
 
-	SQLService getSQLService(SQLConConfig config) {
+	protected SQLService getSQLService(SQLConConfig config) {
 		switch (config.type) {
 		case MYSQL:
 			return new MySQLService((MySQLConConfig)config);
@@ -207,7 +207,7 @@ public class StartedControl extends Controller {
 		addSQLConInfo(conService.getSQLConInfo());
 	}
 
-	void addSQLConInfo(SQLConOutline info) {
+	protected void addSQLConInfo(SQLConOutline info) {
 		// connection name
 		TreeItem<String> root = new TreeItem<String>(info.conConfig.name);
 		for (DatabaseOutline dbInfo : info.dbs) {
@@ -236,7 +236,7 @@ public class StartedControl extends Controller {
 		return tab;
 	}
 
-	void addSQLResult(SQLResult res) {
+	protected void addSQLResult(SQLResult res) {
 		// set sql info
 		view.sqlInfoOutput.setText(res.info);
 		// set tabs

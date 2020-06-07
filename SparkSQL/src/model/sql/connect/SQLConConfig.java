@@ -2,7 +2,7 @@ package model.sql.connect;
 
 import model.sql.SQLType;
 
-public class SQLConConfig {
+public abstract class SQLConConfig {
 	public SQLType type = null;
 	public String name = null;
 	public String url = null;

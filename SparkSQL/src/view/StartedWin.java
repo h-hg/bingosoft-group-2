@@ -56,10 +56,10 @@ public class StartedWin extends Win {
 	public TextArea sqlInfoOutput = null;
 	
 	public Label statusBar = null;
-	public void initRoot() {
+	protected void initRoot() {
 		root = new BorderPane();
 	}
-	public void initMenuBar() {
+	protected void initMenuBar() {
 	    menuBar = new MenuBar();
 	    //menuBar.prefWidthProperty().bind(primaryStage.widthProperty());
 
@@ -80,7 +80,7 @@ public class StartedWin extends Win {
 	    menuBar.getMenus().addAll(fileMenu, aboutMenu);
 	    root.setTop(menuBar);
 	}
-	public void initNavPart() {
+	protected void initNavPart() {
 		treeView = new TreeView<>();
 		treeView.setShowRoot(false);
 		root.setLeft(treeView);
@@ -90,7 +90,7 @@ public class StartedWin extends Win {
 	   
 	    treeView.setRoot(treeRoot); 
 	}
-	public void initMainPart() {
+	protected void initMainPart() {
 		mainPane = new VBox();
 		//control bar
 		controlBar = new FlowPane();
@@ -117,7 +117,7 @@ public class StartedWin extends Win {
 		mainPane.getChildren().addAll(controlBar, sqlTextInput, sqlResTabPane);
 		root.setCenter(mainPane);
 	}
-	public void initStatusBar() {
+	protected void initStatusBar() {
 		statusBar = new Label("status bar");
 		root.setBottom(statusBar);
 	}
