@@ -19,7 +19,6 @@ import model.sql.query.SQLResultTable;
 import model.sql.query.TableOutline;
 
 public abstract class SQLService {
-
 	protected Connection conn = null;
 	protected String driverClassName = null;
 
@@ -110,9 +109,13 @@ public abstract class SQLService {
 		// the operation index
 		int count = 0;
 		for (String query : sqlCode.split(";")) {
-			query = query.trim().toLowerCase();//remove the space
+			query = query.trim();//remove the space
 			if (query == null || query.length() == 0)
 				continue;
+
+			//change first word of query statement
+			query=changeFirstWordToLowerCase(query);
+
 			int type = getOperationType(query);
 			// there exists spelling mistake or
 			// the situation this program doesn's consider
@@ -147,6 +150,23 @@ public abstract class SQLService {
 		sqlResult.tables = resultTables;
 		return sqlResult;
 	}
+
+	//change the first word of the query statement to lower case
+	//cause mysql and sparksql can deal with word like from, into and table name in upper case
+	//we can just care about first.
+	protected String changeFirstWordToLowerCase(String query){
+		StringBuilder sb=new StringBuilder();
+		int i=0;
+		for(;i<query.length();i++){
+			char c= query.charAt(i);
+			if(c==' ') break;
+			sb.append(Character.toLowerCase(c));
+		}
+		sb.append(query,i,query.length());
+		return  sb.toString();
+	}
+
+
 
 	/*
 	 * 0: the operation that this code doesn's implement
