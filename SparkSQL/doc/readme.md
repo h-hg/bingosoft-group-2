@@ -48,6 +48,12 @@ SQL 语句查询结构类
 ## controller
 这个包实现了控制器，连接了 view 和 model，实现了用户点击等 UI 事件
 
+- `Controller`是一个虚基类，`StartedControl`和`SQLConControl`都继承于此类，包含了两个方法`show()`和`close()`来控制窗口的加载和关闭。
+- `StartedControl`是用来控制窗口的控制类，连接了view和model，包括菜单、导航栏、侧边栏、查询和结果等等。
+- `SQLConControl`是控制链接窗口的虚基类
+- `SparkSQLConControl`和`MySQLConControl`继承了`SQLConControl`，包含一个`getSQLConControl`方法来获得建立连接的参数以便虚基类其中函数的执行。
+- `Maneger`是一个管理窗口的类，帮助将窗口名称转化为控制器类型的类
+
 ## UML 图
 下面是我们所有类具体的 UML 图。
 
