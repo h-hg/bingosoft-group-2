@@ -308,5 +308,3 @@ class SparkSQLService {
   
 ### 大小写转换 
 大小写转换主要针对的是每个单个的查询语句的首单词，像第二部分提到的那些单词(`select`, `delete`, `create`......)在大写情况下 MySQL 和 SparkSQL 是无法识别的，而像表名和`from`, `into`, `values`......这些则可以识别，考虑用户可能使用过其他有图形界面的工具（例如Navicat），习惯使用大写格式进行 SQL 查询，以此在每个查询语句进行查询前对其进行首单词的修改，使其能够被数据库识别。具体由`changeFirstWordToLowerCase()`方法实现。
-
-# 你们有补充的也上
